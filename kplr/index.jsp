@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,15 +55,15 @@
 				<p class="tm-hero-subtitle">
 					Nos solutions cloud <br>pour votre entreprise
 				</p>
-				<p>KPLR est un cabinet de conseil. Présent à Paris, Marseille et
+				<p>KPLR est un cabinet de conseil. PrÃ©sent Ã  Paris, Marseille et
 					Casablanca.</p>
-				<p>Notre moteur : Une innovation est un processus de création au
-					terme du quel un nouveau marché apparait, ou pérennise, par des
-					effets vertueux significatifs, un marché existant.</p>
-				<p>KPLR développe plusieurs stratégies pour être à la pointe des
+				<p>Notre moteur : Une innovation est un processus de crÃ©ation au
+					terme du quel un nouveau marchÃ© apparait, ou pÃ©rennise, par des
+					effets vertueux significatifs, un marchÃ© existant.</p>
+				<p>KPLR dÃ©veloppe plusieurs stratÃ©gies pour Ãªtre Ã  la pointe des
 					technologies et des innovations en produits et ser- vices, afin de
-					proposer à ses clients des solutions bien adaptées en performances,
-					fiabilité, qualité et coûts.</p>
+					proposer Ã  ses clients des solutions bien adaptÃ©es en performances,
+					fiabilitÃ©, qualitÃ© et coÃ»ts.</p>
 			</div>
 		</div>
 
@@ -80,17 +82,17 @@
 				<!-- first row -->
 				<div class="col-lg-12 col-xl-12">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4 tm-section-title">Nos métiers</h2>
+						<h2 class="tm-text-primary mb-4 tm-section-title">Nos mÃ©tiers</h2>
 						<p class="mb-4 tm-intro-text">KPLR construit des solutions
-							Cloud pour aider les organisations et entreprises à mettre en
+							Cloud pour aider les organisations et entreprises Ã  mettre en
 							oeuvre la transformation de leur data center ou de leur
-							suppression et à gérer la transition qui en résulte.</p>
-						<p>KPLR produit des solutions à la demande pour accompagner
-							ses clients dans la transformation de l'exploitation des données
+							suppression et Ã  gÃ©rer la transition qui en rÃ©sulte.</p>
+						<p>KPLR produit des solutions Ã  la demande pour accompagner
+							ses clients dans la transformation de l'exploitation des donnÃ©es
 							dont elles disposent</p>
 						<p>par l'usage d'outils tels que le big data,l'Intelligence
 							Artificielle et technologies annexes</p>
-						<p>Notre approche opérationnelle en matière de Cloud ets la
+						<p>Notre approche opÃ©rationnelle en matiÃ¨re de Cloud ets la
 							suivante :</p>
 					</div>
 				</div>
@@ -105,15 +107,15 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyses stratégique</h2>
+						<h2 class="tm-text-primary mb-4">Analyses stratÃ©gique</h2>
 						<p class="mb-4 tm-intro-text">Nous accompagnons nos clients
-							dans l’analyse de leur système d’informa- tion, et des Datalakes
-							quand ils existent de tel sorte à faire ressortir : Les coûts :
-							coût du matériel, coût de la maintenance, coût des différentes
+							dans lâanalyse de leur systÃ¨me dâinforma- tion, et des Datalakes
+							quand ils existent de tel sorte Ã  faire ressortir : Les coÃ»ts :
+							coÃ»t du matÃ©riel, coÃ»t de la maintenance, coÃ»t des diffÃ©rentes
 							taxes, cout en termes de locaux, cout de remplacement, cout des
-							pannes, coût du personnel ou des services dédiés, coûts des
-							licences, coût des développements spécifiques, coût du risque lié
-							à l’éditeur etc.</p>
+							pannes, coÃ»t du personnel ou des services dÃ©diÃ©s, coÃ»ts des
+							licences, coÃ»t des dÃ©veloppements spÃ©cifiques, coÃ»t du risque liÃ©
+							Ã  lâÃ©diteur etc.</p>
 					</div>
 				</div>
 
@@ -122,10 +124,10 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyse de l’opportunité</h2>
-						<p class="mb-4 tm-intro-text">d’une migration pour nos
-							clients. La prise en compte d’impératifs de sécurité ou de
-							souveraineté peuvent influer la déci- sion de migration totale ou
+						<h2 class="tm-text-primary mb-4">Analyse de lâopportunitÃ©</h2>
+						<p class="mb-4 tm-intro-text">dâune migration pour nos
+							clients. La prise en compte dâimpÃ©ratifs de sÃ©curitÃ© ou de
+							souverainetÃ© peuvent influer la dÃ©ci- sion de migration totale ou
 							partielle.</p>
 					</div>
 				</div>
@@ -140,22 +142,22 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Proposition d’action</h2>
+						<h2 class="tm-text-primary mb-4">Proposition dâaction</h2>
 						<p class="mb-4 tm-intro-text">Les actions structurelles :
-							produire un « plan Cloud » incluant : La chaîne de changement que
-							le passage au cloud induit pour : - L’activité de l’entreprise ou
-							du service publique considéré (accroisse- ment du chiffre
-							d’affaires, réduction des charges, efficience des services
-							proposés, dégagement de ressources que l’entreprise, publique ou
-							pri- vée, peut affecter de façon plus efficiente pour accroitre
-							sa compétitivité ou réduire son coût.</p>
+							produire un Â« plan Cloud Â» incluant : La chaÃ®ne de changement que
+							le passage au cloud induit pour : - LâactivitÃ© de lâentreprise ou
+							du service publique considÃ©rÃ© (accroisse- ment du chiffre
+							dâaffaires, rÃ©duction des charges, efficience des services
+							proposÃ©s, dÃ©gagement de ressources que lâentreprise, publique ou
+							pri- vÃ©e, peut affecter de faÃ§on plus efficiente pour accroitre
+							sa compÃ©titivitÃ© ou rÃ©duire son coÃ»t.</p>
 
 						<div class="tm-continue">
 							<a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn
 								More</a>
-							<!-- - Les salariés de l’entreprise, soit par l’introduction de nouveaux usages ou de nouvelle organisation
-- Le client ou l’usager.
-- La sécurité des données, les contraintes liées, les couts de sécurisation. -->
+							<!-- - Les salariÃ©s de lâentreprise, soit par lâintroduction de nouveaux usages ou de nouvelle organisation
+- Le client ou lâusager.
+- La sÃ©curitÃ© des donnÃ©es, les contraintes liÃ©es, les couts de sÃ©curisation. -->
 						</div>
 					</div>
 				</div>
@@ -166,10 +168,10 @@
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">conception</h2>
-						<p class="mb-4 tm-intro-text">solution optimale où nos clients
-							sont largement impli- qués, le plan prévisionnel de déploiement
-							est établi, les moyens a allouer et le objectifs a atteindre
-							fixés.</p>
+						<p class="mb-4 tm-intro-text">solution optimale oÃ¹ nos clients
+							sont largement impli- quÃ©s, le plan prÃ©visionnel de dÃ©ploiement
+							est Ã©tabli, les moyens a allouer et le objectifs a atteindre
+							fixÃ©s.</p>
 
 						<div class="tm-continue">
 							<a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a>
@@ -187,11 +189,11 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">déploiement</h2>
+						<h2 class="tm-text-primary mb-4">dÃ©ploiement</h2>
 						<p class="mb-4 tm-intro-text">implantation de la solution. Nos
-							ingénieurs veillent à la transmission de l’ensemble des éléments
-							du projet, de leur mise en œuvre, et de l’obtention du ou des
-							résultats attendus.</p>
+							ingÃ©nieurs veillent Ã  la transmission de lâensemble des Ã©lÃ©ments
+							du projet, de leur mise en Åuvre, et de lâobtention du ou des
+							rÃ©sultats attendus.</p>
 					</div>
 				</div>
 
@@ -201,9 +203,9 @@
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">formation</h2>
-						<p class="mb-4 tm-intro-text">s’agissant de solutions
-							d’optimisation a forte teneur tech- nologique, l’exploitation des
-							solutions suppose la formation de l’ensemble des personnels de
+						<p class="mb-4 tm-intro-text">sâagissant de solutions
+							dâoptimisation a forte teneur tech- nologique, lâexploitation des
+							solutions suppose la formation de lâensemble des personnels de
 							nos clients et de leur assistance tout au long de la vie du
 							projet.</p>
 					</div>
@@ -245,10 +247,10 @@
 							</figure>
 
 							<figure class="tm-testimonial-item">
-								<img src="img/logos/fdj.jpg" alt="Française des jeux"
+								<img src="img/logos/fdj.jpg" alt="FranÃ§aise des jeux"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla</blockquote>
-								<figcaption>Française des jeux</figcaption>
+								<figcaption>FranÃ§aise des jeux</figcaption>
 							</figure>
 
 							<figure class="tm-testimonial-item">
@@ -263,7 +265,7 @@
 									alt="ministere de l'economie et des finances"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla.</blockquote>
-								<figcaption>Ministère de l'Economie , des Finances
+								<figcaption>MinistÃ¨re de l'Economie , des Finances
 									et de l'insdustrie</figcaption>
 							</figure>
 
@@ -429,7 +431,7 @@
 
 					<div class="contact-item">
 						<a rel="nofollow"
-							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+à+Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
+							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+Ã +Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
 							class="item-link"> <i
 							class="fas fa-2x fa-map-marker-alt mr-4"></i> <span class="mb-0">Nos
 								locaux</span>
@@ -656,5 +658,12 @@
 			});
 		});
 	</script>
+</body>
+</html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
 </body>
 </html>
