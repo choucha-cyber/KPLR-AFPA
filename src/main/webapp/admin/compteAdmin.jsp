@@ -1,7 +1,7 @@
 <c:import url="headAdmin.jsp"></c:import>
 
-<c:if test="${ !empty sessionScope.email}">
-        <p> ${ sessionScope.email } est bien connecté!</p>
+<c:if test="${ !empty sessionScope.nom}">
+        <p> ${ sessionScope.prenom } est bien connecté!</p>
     </c:if>
 
 
@@ -14,6 +14,8 @@
 					<h2 class="tm-block-title d-inline-block">Comptes</h2>
 				</div>
 			</div>
+			
+			<!-- ICI ON AFFICHE LA LISTE DES ADMIN -->
 			<ol
 				class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
 				<li class="tm-list-group-item">Admin 1</li>
@@ -37,8 +39,12 @@
 						action="<%= request.getContextPath() %>/admin/compteAdmin"
 						class="tm-signup-form">
 						<div class="form-group">
-							<label for="name">Nom</label> <input placeholder="Nom" id="name"
-								name="name" type="text" class="form-control validate">
+							<label for="nom">Nom</label> <input placeholder="Nom" id="nom"
+								name="nom" type="text" class="form-control validate">
+						</div>
+						<div class="form-group">
+							<label for="prenom">Prénom</label> <input placeholder="prenom" id="prenom"
+								name="prenom" type="text" class="form-control validate">
 						</div>
 						<div class="form-group">
 							<label for="email">email</label> <input

@@ -18,10 +18,11 @@ public class AdminDao {
 		boolean msg = false;
 		try {
 			PreparedStatement req = connect
-					.prepareStatement("INSERT INTO Admin (nom, prenom, email,password) VALUES (?,?,?,?)");
+					.prepareStatement("INSERT INTO Admin (nom, prenom, email, password) VALUES (?,?,?,?)");
 			req.setString(1, object.getNom());
-			req.setString(2, object.getEmail());
-			req.setString(3, encode(object.getPassword()));
+			req.setString(2, object.getPrenom());
+			req.setString(3, object.getEmail());
+			req.setString(4, encode(object.getPassword()));
 
 			req.executeUpdate();
 

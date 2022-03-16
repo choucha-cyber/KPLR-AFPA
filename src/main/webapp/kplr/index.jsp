@@ -1,73 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>KPLR</title>
-<link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
-<link rel="stylesheet" href="slick/slick.css">
-<link rel="stylesheet" href="slick/slick-theme.css">
-<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+<c:import url="header.jsp"></c:import>
 
-
-</head>
-<body>
-	<!-- Hero section -->
-	<section id="infinite" class="text-white tm-font-big tm-parallax">
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
-			<div class="container">
-				<div class="tm-next">
-					<a href="#infinite" class="navbar-brand"><img
-						style="width: 150px; border-radius:15px" alt="logo kplr" src="img/logos/logo_kplr.jpg"></a>
-
-				</div>
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<i class="fas fa-bars navbar-toggler-icon"></i>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#infinite">Qui sommes nous</a></li>
-						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#whatwedo">Nos mÃ©tiers</a></li>
-						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#testimonials">Nos clients</a></li>
-						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#gallery">Portail Maroc</a></li>
-						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<div class="text-center tm-hero-text-container">
+		<div style="width:75%; margin:auto" class="text-center tm-hero-text-container">
 			<div class="tm-hero-text-container-inner">
-				<h2 class="tm-hero-title">KPLR</h2>
+				
 				<p class="tm-hero-subtitle">
-					Nos solutions cloud <br>pour votre entreprise
+					Nos solutions cloud pour votre entreprise
 				</p>
-				<p>KPLR est un cabinet de conseil. PrÃ©sent Ã Â  Paris, Marseille
+				<p>KPLR est un cabinet de conseil présent à Paris, Marseille
 					et Casablanca.</p>
-				<p>Notre moteur : Une innovation est un processus de crÃ©ation au
-					terme du quel un nouveau marchÃ© apparait, ou pÃ©rennise, par des
-					effets vertueux significatifs, un marchÃ© existant.</p>
-				<p>KPLR dÃ©veloppe plusieurs stratÃ©gies pour Ãªtre Ã  la pointe
-					des technologies et des innovations en produits et services, afin
-					de proposer Ã  ses clients des solutions bien adaptÃ©es en
-					performances, fiabilitÃ©, qualitÃ© et coÃ»ts.</p>
+				<p>Notre moteur : Une innovation est un processus de création au
+					terme du quel un nouveau marché apparaît, ou pérennise, par des
+					effets vertueux significatifs, un marché existant.</p>
+				<p>KPLR développe plusieurs stratégies pour être à la pointe des
+					technologies et des innovations en produits et services, afin de
+					proposer à ses clients des solutions bien adaptées en performances,
+					fiabilité, qualité et coûts.</p>
 			</div>
 		</div>
+		
 
 		<div class="tm-next tm-intro-next">
 			<a href="#whatwedo" class="text-center tm-down-arrow-link"> <i
@@ -84,17 +34,17 @@
 				<!-- first row -->
 				<div class="col-lg-12 col-xl-12">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4 tm-section-title">Nos mÃ©tiers</h2>
+						<h2 class="tm-text-primary mb-4 tm-section-title">Nos métiers</h2>
 						<p class="mb-4 tm-intro-text">KPLR construit des solutions
-							Cloud pour aider les organisations et entreprises Ã Â  mettre en
+							Cloud pour aider les organisations et entreprises à  mettre en
 							oeuvre la transformation de leur data center ou de leur
-							suppression et Ã Â  gÃ©rer la transition qui en rÃ©sulte.</p>
-						<p>KPLR produit des solutions Ã Â  la demande pour accompagner
-							ses clients dans la transformation de l'exploitation des donnÃ©es
+							suppression et à  gérer la transition qui en résulte.</p>
+						<p>KPLR produit des solutions à  la demande pour accompagner
+							ses clients dans la transformation de l'exploitation des données
 							dont elles disposent</p>
 						<p>par l'usage d'outils tels que le big data,l'Intelligence
 							Artificielle et technologies annexes</p>
-						<p>Notre approche opÃ©rationnelle en matiÃ©re de Cloud est la
+						<p>Notre approche opérationnelle en matiére de Cloud est la
 							suivante :</p>
 					</div>
 				</div>
@@ -109,22 +59,30 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyses stratÃ©gique</h2>
-						<p class="mb-4 tm-intro-text">Nous accompagnons nos clients
-							dans l'analyse de leur systÃ¨me dÃ¢Â€'information, et des Datalakes
-							quand ils existent de tel sorte Ã Â  faire ressortir :</p>
-						<ol>
-							<li>coÃ»t du matÃ©riel</li>
-							<li>coÃ»t de la maintenance</li>
-							<li>coÃ»t des diffÃ©rentes taxes</li>
-							<li>coÃ»t en terme de locaux</li>
-							<li>coÃ»t de remplacement</li>
-							<li>coÃ»t des pannes</li>
-							<li>coÃ»t du personnel ou des servuces dÃ©diÃ©s</li>
-							<li>coÃ»t des licences</li>
-							<li>cÃ´ut des risques liÃ© Ã  l'Ã©diteur</li>
-							<li></li>
-						</ol>
+						<h2 class="tm-text-primary mb-4">Analyses stratégique</h2>
+						<details>
+							<summary>
+								<p class="mb-4 tm-intro-text">Nous accompagnons nos clients
+									dans l'analyse de leur système dâ€'information, et des
+									Datalakes quand ils existent de tel sorte à  faire ressortir :</p>
+							</summary>
+
+							<ol>
+								<li>coût du matériel</li>
+								<li>coût de la maintenance</li>
+								<li>coût des différentes taxes</li>
+								<li>coût en terme de locaux</li>
+								<li>coût de remplacement</li>
+								<li>coût des pannes</li>
+								<li>coût du personnel ou des servuces dédiés</li>
+								<li>coût des licences</li>
+								<li>côut des risques lié à l'éditeur</li>
+
+							</ol>
+
+						</details>
+
+
 
 					</div>
 				</div>
@@ -134,10 +92,10 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyse de l'opportunitÃ©</h2>
-						<p class="mb-4 tm-intro-text">d'Â€Â™une migration pour nos
-							clients. La prise en compte des impÃ©ratifs de sÃ©curitÃ© ou de
-							souverainetÃ© peuvent influer la dÃ©cision de migration totale ou
+						<h2 class="tm-text-primary mb-4">Analyse de l'opportunité</h2>
+						<p class="mb-4 tm-intro-text">d'€™une migration pour nos
+							clients. La prise en compte des impératifs de sécurité ou de
+							souveraineté peuvent influer la décision de migration totale ou
 							partielle.</p>
 					</div>
 				</div>
@@ -153,22 +111,21 @@
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">Proposition d'action</h2>
-						<p class="mb-4 tm-intro-text">Les actions structurelles :
-							produire un "plan Cloud" incluant : La chaÃ®ne de changement que
-							le passage au cloud induit pour : - L'Â€Â™activitÃ© de l'entreprise
-							ou du service publique considÃ©rÃ© (accroissement du chiffre
-							d'affaires, rÃ©duction des charges, efficience des services
-							proposÃ©s, dÃ©gagement de ressources que l'entreprise, publique ou
-							privÃ©e, peut affecter de faÃ§on plus efficiente pour accroitre sa
-							compÃ©titivitÃ© ou rÃ©duire son coÃ»t.</p>
+						<details>
+							<summary>
+								<p class="mb-4 tm-intro-text">Les actions structurelles :
+									produire un "plan Cloud" incluant :Lla chaîne de changement que
+									le passage au cloud induit pour :
+							</summary>
+							- L'€™activité de l'entreprise ou du service publique considéré
+							(accroissement du chiffre d'affaires, réduction des charges,
+							efficience des services proposés, dégagement de ressources que
+							l'entreprise, publique ou privée, peut affecter de façon plus
+							efficiente pour accroitre sa compétitivité ou réduire son coût.
+							</p>
+						</details>
 
-						<div class="tm-continue">
-							<a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn
-								More</a>
-							<!-- - Les salariÃƒÂ©s de lÃ¢Â€Â™entreprise, soit par lÃ¢Â€Â™introduction de nouveaux usages ou de nouvelle organisation
-- Le client ou lÃ¢Â€Â™usager.
-- La sÃƒÂ©curitÃƒÂ© des donnÃƒÂ©es, les contraintes liÃƒÂ©es, les couts de sÃƒÂ©curisation. -->
-						</div>
+
 					</div>
 				</div>
 
@@ -179,13 +136,10 @@
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">conception</h2>
 						<p class="mb-4 tm-intro-text">d'une solution optimale pour nos
-							clients sont largement impliquÃ©s, le plan prÃ©visionnel de
-							dÃ©ploiement est Ã©tabli, les moyens a allouer et le objectifs a
-							atteindre fixÃ©s.</p>
+							clients sont largement impliqués, le plan prévisionnel de
+							déploiement est établi, les moyens a allouer et le objectifs a
+							atteindre fixés.</p>
 
-						<div class="tm-continue">
-							<a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a>
-						</div>
 					</div>
 				</div>
 
@@ -199,11 +153,11 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">dÃ©ploiement</h2>
+						<h2 class="tm-text-primary mb-4">déploiement</h2>
 						<p class="mb-4 tm-intro-text">implantation de la solution. Nos
-							ingÃ©nieurs veillent Ã  la transmission de l'ensemble des Ã©lÃ©ments
+							ingénieurs veillent à la transmission de l'ensemble des éléments
 							du projet, de leur mise en oeuvre, et de l'obtention du ou des
-							rÃ©sultats attendus.</p>
+							résultats attendus.</p>
 					</div>
 				</div>
 
@@ -214,10 +168,13 @@
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">formation</h2>
 						<p class="mb-4 tm-intro-text">s'agissant de solutions
-							d'optimisation Ã  forte teneur technologique, l'exploitation des
+							d'optimisation à forte teneur technologique, l'exploitation des
 							solutions suppose la formation de l'ensemble des personnels de
 							nos clients et de leur assistance tout au long de la vie du
 							projet.</p>
+						<div class="tm-continue">
+							<a href="catalogue.jsp" class="tm-intro-text tm-btn-primary">Détails</a>
+						</div>
 					</div>
 				</div>
 
@@ -257,10 +214,10 @@
 							</figure>
 
 							<figure class="tm-testimonial-item">
-								<img src="img/logos/fdj.jpg" alt="FranÃƒÂ§aise des jeux"
+								<img src="img/logos/fdj.jpg" alt="FranÃ§aise des jeux"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla</blockquote>
-								<figcaption>FranÃ§aise des jeux</figcaption>
+								<figcaption>Française des jeux</figcaption>
 							</figure>
 
 							<figure class="tm-testimonial-item">
@@ -275,7 +232,7 @@
 									alt="ministere de l'economie et des finances"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla.</blockquote>
-								<figcaption>MinistÃ¨re de l'Economie , des Finances
+								<figcaption>Ministère de l'Economie , des Finances
 									et de l'insdustrie</figcaption>
 							</figure>
 
@@ -299,7 +256,7 @@
 				<div class="text-center col-12">
 					<h2 class="tm-text-primary tm-section-title mb-4">Portail
 						Maroc</h2>
-					<p class="mx-auto tm-section-desc">blablabla Ã  Casa on est les
+					<p class="mx-auto tm-section-desc">blablabla à Casa on est les
 						meilleurs blablabla</p>
 				</div>
 			</div>
@@ -430,7 +387,7 @@
 
 					<div class="contact-item">
 						<a rel="nofollow"
-							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+ÃƒÂ +Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
+							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+Ã +Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
 							class="item-link"> <i
 							class="fas fa-2x fa-map-marker-alt mr-4"></i> <span class="mb-0">Nos
 								locaux</span>

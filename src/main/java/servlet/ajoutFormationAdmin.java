@@ -18,6 +18,8 @@ import model.Formation;
 @WebServlet("/admin/ajoutFormationAdmin")
 public class ajoutFormationAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	FormationDao formationDao = new FormationDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,6 +33,9 @@ public class ajoutFormationAdmin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		request.setAttribute("formations", formationDao.read());
 		request.getRequestDispatcher("ajoutFormationAdmin.jsp").forward(request, response);
 	}
 
@@ -49,9 +54,10 @@ public class ajoutFormationAdmin extends HttpServlet {
 		
 		//String titre, String code, int duree, int tarif, String date, String contenu
 		Formation formation = new Formation(titre, code, duree, tarif, date, contenu);
-		FormationDao formationDao = new FormationDao();
+		
 		
 		formationDao.create(formation);
+		
 		System.out.println(formation);
 		
 		doGet(request, response);

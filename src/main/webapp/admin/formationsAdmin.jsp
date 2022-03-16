@@ -6,14 +6,14 @@
 		<div class="bg-white tm-block h-100">
 			<div class="row">
 				<div class="col-md-8 col-sm-12">
-					<h2 class="tm-block-title d-inline-block">Catalogue des Formations</h2>
+					<h2 class="tm-block-title d-inline-block">Catalogue </h2>
 
 				</div>
 				<div class="col-md-4 col-sm-12 text-right">
-					<a href="ajoutProduitAdmin.jsp" class="btn btn-small btn-primary">Ajouter une nouvelle formation</a>
+					<a href="ajoutFormationAdmin.jsp" class="btn btn-small btn-primary">Ajouter formation</a>
 				</div>
 				<div class="col-md-4 col-sm-12 text-right">
-					<a href="updateProduit.jsp" class="btn btn-small btn-primary">Modifier Formation</a>
+					<a href="updateFormation.jsp" class="btn btn-small btn-primary">Modifier Formation</a>
 				</div>
 			</div>
 			<div class="table-responsive">
@@ -29,6 +29,7 @@
 							<th scope="col">&nbsp;</th>
 						</tr>
 					</thead>
+					<!-- ICI LISTE DES FORMATIONS AJOUTEES EN BDD -->
 					<tbody>
 						<tr>
 							<th scope="row"><input type="checkbox" aria-label="Checkbox">
@@ -74,7 +75,7 @@
 
 			<div class="tm-table-mt tm-table-actions-row">
 				<div class="tm-table-actions-col-left">
-					<button class="btn btn-danger">Suuprimer les formations sélectionnées</button>
+					<button class="btn btn-danger">Supprimer les formations sélectionnées</button>
 				</div>
 				<div class="tm-table-actions-col-right">
 					<span class="tm-pagination-label">Page</span>
@@ -100,17 +101,17 @@
 			<table class="table table-hover table-striped mt-3">
 				<tbody>
 					<tr>
-						<td>1. Coup de coeur</td>
+						<td>1. BIG DATA</td>
 						<td class="tm-trash-icon-cell"><i
 							class="fas fa-trash-alt tm-trash-icon"></i></td>
 					</tr>
 					<tr>
-						<td>2. Promo</td>
+						<td>2. PYTHON</td>
 						<td class="tm-trash-icon-cell"><i
 							class="fas fa-trash-alt tm-trash-icon"></i></td>
 					</tr>
 					<tr>
-						<td>3. Nouveauté</td>
+						<td>3. GESTION PROJET</td>
 						<td class="tm-trash-icon-cell"><i
 							class="fas fa-trash-alt tm-trash-icon"></i></td>
 					</tr>
