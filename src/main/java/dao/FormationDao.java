@@ -18,13 +18,14 @@ public class FormationDao implements Idao<Formation> {
 		boolean msg = false;
 		try {
 			PreparedStatement req = connect.prepareStatement(
-					"INSERT INTO Formation (titre, code, duree, tarif, date, contenu)" + " VALUES (?,?,?,?,?,?)");
+					"INSERT INTO Formation (titre, code, duree, tarif, dateDebut, dateFin, contenu) VALUES (?,?,?,?,?,?,?)");
 			req.setString(1, object.getTitre());
 			req.setString(2, object.getCode());
 			req.setInt(3, object.getDuree());
 			req.setInt(4, object.getTarif());
-			req.setString(5, object.getDate());
-			req.setString(6, object.getContenu());
+			req.setString(5, object.getDateDebut());
+			req.setString(6, object.getDateFin());
+			req.setString(7, object.getContenu());
 
 			req.executeUpdate();
 
@@ -56,11 +57,12 @@ public class FormationDao implements Idao<Formation> {
 				// date, String contenu
 
 				Formation formation = new Formation(rs.getInt("id_formation"), rs.getString("titre"),
-						rs.getString("code"), rs.getInt("duree"), rs.getInt("tarif"), rs.getString("date"),
-						rs.getString("contenu"));
+						rs.getString("code"), rs.getInt("duree"), rs.getInt("tarif"), rs.getString("dateDebut"),
+						rs.getString("dateFin"),rs.getString("contenu"));
 
 				listeFormation.add(formation);
 			}
+			return listeFormation;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -98,10 +100,11 @@ public class FormationDao implements Idao<Formation> {
 				String code = resultSet.getString("code");
 				int duree = resultSet.getInt("duree");
 				int tarif = resultSet.getInt("tarif");
-				String date = resultSet.getString("date");
+				String dateDebut = resultSet.getString("dateDebut");
+				String dateFin = resultSet.getString("dateFin");
 				String contenu= resultSet.getString("contenu");
 
-				formation = new Formation(id_formation, titre, code, duree, tarif, date, contenu);
+				formation = new Formation(id_formation, titre, code, duree, tarif, dateDebut, dateFin, contenu);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

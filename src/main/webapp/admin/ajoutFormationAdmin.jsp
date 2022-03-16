@@ -11,8 +11,7 @@
 			</div>
 			<div class="row mt-4 tm-edit-product-row">
 				<div class="col-xl-7 col-lg-7 col-md-12">
-					<form method="post"
-				action="<%= request.getContextPath() %>/admin/ajoutFormationAdmin">
+					<form method="post" action="<%= request.getContextPath() %>/admin/ajoutFormationAdmin">
 
 						<div class="input-group mb-3">
 							<label for="titre"
@@ -39,9 +38,16 @@
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
 						</div>
 						<div class="input-group mb-3">
-							<label for="date"
+							<label for="dateDebut"
 								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">
-								Date </label> <input id="date" name="date" type="text"
+								Date début </label> <input id="dateDebut" name="dateDebut" type="date"
+								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
+								data-large-mode="true">
+						</div>
+						<div class="input-group mb-3">
+							<label for="dateFin"
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">
+								Date fin </label> <input id="datefin" name="dateFin" type="date"
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
 								data-large-mode="true">
 						</div>

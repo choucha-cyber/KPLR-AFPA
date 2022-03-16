@@ -9,7 +9,8 @@ public class Formation {
 	private String code;
 	private int duree;
 	private int tarif;
-	private String date;
+	private String dateDebut;
+	private String dateFin;
 	private String contenu;
 	
 	public Formation() {
@@ -17,24 +18,26 @@ public class Formation {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Formation(int id_formation, String titre, String code, int duree, int tarif, String date, String contenu) {
+	public Formation(int id_formation, String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu) {
 		super();
 		this.id_formation = id_formation;
 		this.titre = titre;
 		this.code = code;
 		this.duree = duree;
 		this.tarif = tarif;
-		this.date = date;
+		this.dateDebut = dateDebut;
+		this.dateFin=dateFin;
 		this.contenu = contenu;
 	}
 
-	public Formation(String titre, String code, int duree, int tarif, String date, String contenu) {
+	public Formation(String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu) {
 		super();
 		this.titre = titre;
 		this.code = code;
 		this.duree = duree;
 		this.tarif = tarif;
-		this.date = date;
+		this.dateDebut=dateDebut;
+		this.dateFin=dateFin;		
 		this.contenu = contenu;
 	}
 
@@ -79,13 +82,21 @@ public class Formation {
 	}
 
 
-	public String getDate() {
-		return date;
+	public String getDateDebut() {
+		return dateDebut;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDateDebut(String date) {
+		this.dateDebut = date;
 	}
+	public String getDateFin() {
+		return dateFin;
+	}
+
+	public void setDateFin(String date) {
+		this.dateFin = date;
+	}
+
 
 	public String getContenu() {
 		return contenu;

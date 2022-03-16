@@ -31,42 +31,17 @@
 					</thead>
 					<!-- ICI LISTE DES FORMATIONS AJOUTEES EN BDD -->
 					<tbody>
+					<c:forEach items="${formations}" var="formation">
 						<tr>
 							<th scope="row"><input type="checkbox" aria-label="Checkbox">
 							</th>
-							<td class="tm-product-name">1. BIG DATA - ARCHITECTURE ET INFRASTRUCTURE</td>
-							<td class="text-center">blablabla</td>
-							<td class="text-center">255</td>
-							<td>2018-10-28</td>
+							<td class="tm-product-name">${formation.titre }</td>
+							<td class="text-center">${formation.code }</td>
+							<td class="text-center">${formation.tarif }</td>
+							<td>Du ${formation.dateDebut } au ${formation.dateFin }</td>
 							<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
 						</tr>
-						<tr>
-							<th scope="row"><input type="checkbox" aria-label="Checkbox">
-							</th>
-							<td class="tm-product-name">2. BIG DATA - LES TECHNIQUES D'ANALYSE ET DE VISUALISATION</td>
-							<td class="text-center">blablabla</td>
-							<td class="text-center">260</td>
-							<td>2018-10-24</td>
-							<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
-						</tr>
-						<tr>
-							<th scope="row"><input type="checkbox" aria-label="Checkbox">
-							</th>
-							<td class="tm-product-name">3. DATA ENGINEERING AVEC KAFKA, CASSANDRA ET SPARK</td>
-							<td class="text-center">blablabla</td>
-							<td class="text-center">440</td>
-							<td>2019-02-14</td>
-							<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
-						</tr>
-						<tr>
-							<th scope="row"><input type="checkbox" aria-label="Checkbox">
-							</th>
-							<td class="tm-product-name">4. CLOUDERA - ADMINISTRATION D'UNE PLATEFORME</td>
-							<td class="text-center">blablabla</td>
-							<td class="text-center">655</td>
-							<td>2019-03-22</td>
-							<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
-						</tr>
+					</c:forEach>	
 						
 						
 					</tbody>
