@@ -59,8 +59,6 @@ public class compteAdmin extends HttpServlet {
 		AdminDao adminDao = new AdminDao();
 		adminDao.create(nouvelAdmin);
 
-		System.out.println(nouvelAdmin);
-
 		doGet(request, response);
 
 		/*

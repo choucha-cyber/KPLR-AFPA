@@ -57,9 +57,9 @@
 
 								<li class="nav-item"><a class="nav-link"
 									href="compteAdmin">Comptes</a></li>
+									<li class="nav-item"><a class="nav-link"
+									href="chatAdmin">Chat</a></li>
 								
-							</ul>
-							<ul class="navbar-nav">
 								<li class="nav-item"><a class="nav-link d-flex" href="logoutAdmin">
 									 <i class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
 								</a></li>

@@ -1,28 +1,33 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.MessageDao;
-
-import model.Message;
-
+import dao.FormationDao;
+import model.Formation;
 
 /**
- * Servlet implementation class index
+ * Servlet implementation class ajoutFormationAdmin
  */
-@WebServlet("/kplr/index")
-public class index extends HttpServlet {
+@WebServlet("/admin/chatAdmin")
+public class chatAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	FormationDao formationDao = new FormationDao();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public index() {
+    public chatAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +36,9 @@ public class index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/kplr/index.jsp").forward(request, response);
+		
+		
+		request.getRequestDispatcher("/admin/chatAdmin.jsp").forward(request, response);
 	}
 
 	/**
@@ -39,20 +46,6 @@ public class index extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		String nom = request.getParameter("nom");
-		String email = request.getParameter("email");
-		String mess = request.getParameter("message");
-		
-		Message message = new Message(nom, email, mess);
-		MessageDao messageDao = new MessageDao();
-		
-		messageDao.create(message);
-		System.out.println(message);
-		
-		
-		
-		doGet(request, response);
 	}
 
 }
