@@ -42,7 +42,6 @@
 					<a href="#infinite" class="navbar-brand"><img
 						style="width: 150px; border-radius: 15px" alt="logo kplr"
 						src="img/logos/logo_kplr.jpg"></a>
-
 				</div>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -51,22 +50,47 @@
 					aria-label="Toggle navigation">
 					<i class="fas fa-bars navbar-toggler-icon"></i>
 				</button>
+				
+								
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav mx-auto">
+					<!-- <ul class="navbar-nav ml-auto"> -->
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#infinite">Qui sommes nous</a></li>
+							href="<%=request.getContextPath()%>/kplr/index#infinite">Qui sommes nous</a></li>
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#whatwedo">Nos métiers</a></li>
+							href="<%=request.getContextPath()%>/kplr/index#whatwedo">Nos métiers</a></li>
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="../kplr/catalogue.jsp">Notre catalogue formation</a></li>
+							href="<%=request.getContextPath()%>/kplr/catalogue">Notre catalogue formation</a></li>
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#testimonials">Nos clients</a></li>
+							href="<%=request.getContextPath()%>/kplr/chat#testimonials">Nos clients</a></li>
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#gallery">Portail Maroc</a></li>
+							href="<%=request.getContextPath()%>/kplr/chat#gallery">Portail Maroc</a></li>
 						<li class="nav-item"><a class="nav-link tm-nav-link"
-							href="#contact">Contact</a></li>
+							href="<%=request.getContextPath()%>/kplr/chat#contact">Contact</a></li>
+						<c:if test="${empty client }">
+						<li class="nav-item">							
+						 <%-- <a class="nav-link tm-nav-link" href="<%= request.getContextPath() %>/kplr/inscriptionUser">Sign Up</a>
+					 --%>
+					 <a class="nav-link tm-nav-link" href="<%=request.getContextPath()%>/kplr/index#inscriptionUser">Sign Up</a>
+					</li>
+					<li class="nav-item">
+					
+					<a href="#loginUser" class="nav-link tm-nav-link">Log in</a>
+					
+					</li>
+					</c:if>
+					<c:if test="${not empty client }">
+					<li class="nav-item">
+					<a href="#" class="nav-link tm-nav-link">Bonjour ${ client.nom}</a>
+					</li>
+					<li class="nav-item">
+					<a href="<%= request.getContextPath() %>/kplr/logoutUser" class="nav-link tm-nav-link">logout</a>
+					
+					</li>
+					</c:if>
 					</ul>
 				</div>
 			</div>
 		</nav>
+					
 		<br>

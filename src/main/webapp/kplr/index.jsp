@@ -1,31 +1,43 @@
-<c:import url="header.jsp"></c:import>
 
+<c:import url="/kplr/header.jsp" />	
+
+			
 		<div style="width:75%; margin:auto" class="text-center tm-hero-text-container">
 			<div class="tm-hero-text-container-inner">
-				
+				<a href="<%= request.getContextPath() %>/kplr/logoutUser" class="nav-link tm-nav-link">logout</a>
+		
 				<p class="tm-hero-subtitle">
 					Nos solutions cloud pour votre entreprise
 				</p>
-				<p>KPLR est un cabinet de conseil présent à Paris, Marseille
+				<p>KPLR est un cabinet de conseil prÃ©sent Ã  Paris, Marseille
 					et Casablanca.</p>
-				<p>Notre moteur : Une innovation est un processus de création au
-					terme du quel un nouveau marché apparaît, ou pérennise, par des
-					effets vertueux significatifs, un marché existant.</p>
-				<p>KPLR développe plusieurs stratégies pour être à la pointe des
+				<p>Notre moteur : Une innovation est un processus de crÃ©ation au
+					terme du quel un nouveau marchÃ© apparaÃ®t, ou pÃ©rennise, par des
+					effets vertueux significatifs, un marchÃ© existant.</p>
+				<p>KPLR dÃ©veloppe plusieurs stratÃ©gies pour Ãªtre Ã  la pointe des
 					technologies et des innovations en produits et services, afin de
-					proposer à ses clients des solutions bien adaptées en performances,
-					fiabilité, qualité et coûts.</p>
+					proposer Ã  ses clients des solutions bien adaptÃ©es en performances,
+					fiabilitÃ©, qualitÃ© et coÃ»ts.</p>
 			</div>
 		</div>
-	
+	 
 		<div class="tm-next tm-intro-next ">
 			<a href="#whatwedo" class="text-center tm-down-arrow-link"> <i
 				class="fas fa-2x fa-arrow-down tm-down-arrow"></i>
 			</a>
 			<div class="text-right">
-			<a  href="#chat" > <i
+			<c:if test="${not empty client}">
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/chat?clientId=<c:out value='${client.id_client }'/>"> <i
+							class="far fa-2x fa-comment mr-4"></i> 
+						</a>
+						</c:if>
+						<c:if test="${empty client}">
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser"> <i
 							class="far fa-2x fa-comment mr-4"></i>
-						</a></div>
+						</a>
+						</c:if>
+			
+			</div>
 						
 		</div>
 	
@@ -39,17 +51,17 @@
 				<!-- first row -->
 				<div class="col-lg-12 col-xl-12">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4 tm-section-title">Nos métiers</h2>
+						<h2 class="tm-text-primary mb-4 tm-section-title">Nos mÃ©tiers</h2>
 						<p class="mb-4 tm-intro-text">KPLR construit des solutions
-							Cloud pour aider les organisations et entreprises à  mettre en
+							Cloud pour aider les organisations et entreprises Ã Â  mettre en
 							oeuvre la transformation de leur data center ou de leur
-							suppression et à  gérer la transition qui en résulte.</p>
-						<p>KPLR produit des solutions à  la demande pour accompagner
-							ses clients dans la transformation de l'exploitation des données
+							suppression et Ã Â  gÃ©rer la transition qui en rÃ©sulte.</p>
+						<p>KPLR produit des solutions Ã Â  la demande pour accompagner
+							ses clients dans la transformation de l'exploitation des donnÃ©es
 							dont elles disposent</p>
 						<p>par l'usage d'outils tels que le big data,l'Intelligence
 							Artificielle et technologies annexes</p>
-						<p>Notre approche opérationnelle en matiére de Cloud est la
+						<p>Notre approche opÃ©rationnelle en matiÃ©re de Cloud est la
 							suivante :</p>
 					</div>
 				</div>
@@ -64,24 +76,24 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyses stratégique</h2>
+						<h2 class="tm-text-primary mb-4">Analyses stratÃ©gique</h2>
 						<details>
 							<summary>
 								<p class="mb-4 tm-intro-text">Nous accompagnons nos clients
-									dans l'analyse de leur système dâ€'information, et des
-									Datalakes quand ils existent de tel sorte à  faire ressortir :</p>
+									dans l'analyse de leur systÃ¨me dÃ¢Â€'information, et des
+									Datalakes quand ils existent de tel sorte Ã Â  faire ressortir :</p>
 							</summary>
 
 							<ol>
-								<li>coût du matériel</li>
-								<li>coût de la maintenance</li>
-								<li>coût des différentes taxes</li>
-								<li>coût en terme de locaux</li>
-								<li>coût de remplacement</li>
-								<li>coût des pannes</li>
-								<li>coût du personnel ou des servuces dédiés</li>
-								<li>coût des licences</li>
-								<li>côut des risques lié à l'éditeur</li>
+								<li>coÃ»t du matÃ©riel</li>
+								<li>coÃ»t de la maintenance</li>
+								<li>coÃ»t des diffÃ©rentes taxes</li>
+								<li>coÃ»t en terme de locaux</li>
+								<li>coÃ»t de remplacement</li>
+								<li>coÃ»t des pannes</li>
+								<li>coÃ»t du personnel ou des servuces dÃ©diÃ©s</li>
+								<li>coÃ»t des licences</li>
+								<li>cÃ´ut des risques liÃ© Ã  l'Ã©diteur</li>
 
 							</ol>
 
@@ -97,10 +109,10 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">Analyse de l'opportunité</h2>
-						<p class="mb-4 tm-intro-text">d'€™une migration pour nos
-							clients. La prise en compte des impératifs de sécurité ou de
-							souveraineté peuvent influer la décision de migration totale ou
+						<h2 class="tm-text-primary mb-4">Analyse de l'opportunitÃ©</h2>
+						<p class="mb-4 tm-intro-text">d'Â€Â™une migration pour nos
+							clients. La prise en compte des impÃ©ratifs de sÃ©curitÃ© ou de
+							souverainetÃ© peuvent influer la dÃ©cision de migration totale ou
 							partielle.</p>
 					</div>
 				</div>
@@ -119,14 +131,14 @@
 						<details>
 							<summary>
 								<p class="mb-4 tm-intro-text">Les actions structurelles :
-									produire un "plan Cloud" incluant :Lla chaîne de changement que
+									produire un "plan Cloud" incluant :Lla chaÃ®ne de changement que
 									le passage au cloud induit pour :
 							</summary>
-							- L'€™activité de l'entreprise ou du service publique considéré
-							(accroissement du chiffre d'affaires, réduction des charges,
-							efficience des services proposés, dégagement de ressources que
-							l'entreprise, publique ou privée, peut affecter de façon plus
-							efficiente pour accroitre sa compétitivité ou réduire son coût.
+							- L'Â€Â™activitÃ© de l'entreprise ou du service publique considÃ©rÃ©
+							(accroissement du chiffre d'affaires, rÃ©duction des charges,
+							efficience des services proposÃ©s, dÃ©gagement de ressources que
+							l'entreprise, publique ou privÃ©e, peut affecter de faÃ§on plus
+							efficiente pour accroitre sa compÃ©titivitÃ© ou rÃ©duire son coÃ»t.
 							</p>
 						</details>
 
@@ -141,9 +153,9 @@
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">conception</h2>
 						<p class="mb-4 tm-intro-text">d'une solution optimale pour nos
-							clients sont largement impliqués, le plan prévisionnel de
-							déploiement est établi, les moyens a allouer et le objectifs a
-							atteindre fixés.</p>
+							clients sont largement impliquÃ©s, le plan prÃ©visionnel de
+							dÃ©ploiement est Ã©tabli, les moyens a allouer et le objectifs a
+							atteindre fixÃ©s.</p>
 
 					</div>
 				</div>
@@ -158,11 +170,11 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="tm-intro-text-container">
-						<h2 class="tm-text-primary mb-4">déploiement</h2>
+						<h2 class="tm-text-primary mb-4">dÃ©ploiement</h2>
 						<p class="mb-4 tm-intro-text">implantation de la solution. Nos
-							ingénieurs veillent à la transmission de l'ensemble des éléments
+							ingÃ©nieurs veillent Ã  la transmission de l'ensemble des Ã©lÃ©ments
 							du projet, de leur mise en oeuvre, et de l'obtention du ou des
-							résultats attendus.</p>
+							rÃ©sultats attendus.</p>
 					</div>
 				</div>
 
@@ -173,12 +185,12 @@
 					<div class="tm-intro-text-container">
 						<h2 class="tm-text-primary mb-4">formation</h2>
 						<p class="mb-4 tm-intro-text">s'agissant de solutions
-							d'optimisation à forte teneur technologique, l'exploitation des
+							d'optimisation Ã  forte teneur technologique, l'exploitation des
 							solutions suppose la formation de l'ensemble des personnels de
 							nos clients et de leur assistance tout au long de la vie du
 							projet.</p>
 						<div class="tm-continue">
-							<a href="catalogue.jsp" class="tm-intro-text tm-btn-primary">Détails</a>
+							<a href="catalogue.jsp" class="tm-intro-text tm-btn-primary">DÃ©tails</a>
 						</div>
 					</div>
 				</div>
@@ -219,10 +231,10 @@
 							</figure>
 
 							<figure class="tm-testimonial-item">
-								<img src="img/logos/fdj.jpg" alt="FranÃ§aise des jeux"
+								<img src="img/logos/fdj.jpg" alt="FranÃƒÂ§aise des jeux"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla</blockquote>
-								<figcaption>Française des jeux</figcaption>
+								<figcaption>FranÃ§aise des jeux</figcaption>
 							</figure>
 
 							<figure class="tm-testimonial-item">
@@ -237,7 +249,7 @@
 									alt="ministere de l'economie et des finances"
 									class="img-fluid mx-auto">
 								<blockquote>blablabla.</blockquote>
-								<figcaption>Ministère de l'Economie , des Finances
+								<figcaption>MinistÃ¨re de l'Economie , des Finances
 									et de l'insdustrie</figcaption>
 							</figure>
 
@@ -261,7 +273,7 @@
 				<div class="text-center col-12">
 					<h2 class="tm-text-primary tm-section-title mb-4">Portail
 						Maroc</h2>
-					<p class="mx-auto tm-section-desc">blablabla à Casa on est les
+					<p class="mx-auto tm-section-desc">blablabla Ã  Casa on est les
 						meilleurs blablabla</p>
 				</div>
 			</div>
@@ -379,10 +391,18 @@
 				<div class="col-sm-12 col-md-6">
 
 					<div class="contact-item">
-						<a rel="nofollow" href="#chat" class="item-link"> <i
+					<c:if test="${not empty client}">
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/chat?clientId=<c:out value='${client.id_client }'/>" class="item-link"> <i
 							class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
 								Online</span>
 						</a>
+						</c:if>
+						<c:if test="${empty client}">
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser" class="item-link"> <i
+							class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
+								Online</span>
+						</a>
+						</c:if>
 					</div>
 
 					<div class="contact-item">
@@ -393,7 +413,7 @@
 
 					<div class="contact-item">
 						<a rel="nofollow"
-							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+Ã +Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
+							href="https://www.google.com/search?q=209+rue+saint+pierre+13005+marseille&client=safari&rls=en&sxsrf=APq-WBvMlzdukxABQWXFzd5AhEiQAHGsTQ%3A1647283333819&ei=hYwvYuzYMaKblwTw6aGoCA&oq=209+RUE+SAINT+PIERRE+ÃƒÂ +Marseille+3005&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQogQ6BwgjEOoCECc6DQguEMcBENEDEOoCECc6CAghEBYQHRAeSgQIQRgASgQIRhgAUABY_SNg9S1oAXAAeACAAXqIAaQFkgEDMS41mAEAoAEBoAECsAEKwAEB&sclient=gws-wiz#"
 							class="item-link"> <i
 							class="fas fa-2x fa-map-marker-alt mr-4"></i> <span class="mb-0">Nos
 								locaux</span>
@@ -419,88 +439,79 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
 
-<div class="container mt-5  " id="chat" >
 
-  <!-- Grid row -->
-  <div class="row d-flex flex-row-reverse mx-auto justify-content-center" >
-
-    <!-- Grid column -->
-    <div class="col-md-6 mb-4 d-flex flex-row-reverse">
-
-      <div class="card chat-room small-chat wide" id="myForm">
-        <div class="card-header white d-flex justify-content-between p-2" id="toggle" style="cursor: pointer;">
-          <div class="heading d-flex justify-content-start">
-            <div class="profile-photo">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="avatar rounded-circle mr-2 ml-0">
-              <span class="state"></span>
-            </div>
-            <div class="data">
-              <p class="name mb-0"><strong>John Smith</strong></p>
-              <p class="activity text-muted mb-0">Active now</p>
-            </div>
-          </div>
-       
-        </div>
-        <div class="my-custom-scrollbar" id="message">
-          <div class="card-body p-3">
-            <div class="chat-message">
-              <div class="media mb-3">
-                <img class="d-flex rounded mr-2" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="Generic placeholder image">
-                <div class="media-body">
-                 
-                  <p class="mb-0 text-muted">How can i help you?</p>
-                 
-                </div>
-              </div>
-              <div class="card bg-primary rounded w-75 float-right z-depth-0 mb-1">
-                <div class="card-body p-2">
-                  <p class="card-text text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit voluptatem cum eum tempore.</p>
-                </div>
-              </div>
-              <div class="card bg-primary rounded w-50 float-right z-depth-0 mb-2">
-                <div class="card-body p-2">
-                  <p class="card-text text-white">Rem suscipit lorum repellendus ditiis?</p>
-                </div>
-              </div>
-              <div class="card bg-light rounded w-75 z-depth-0 mb-1 message-text">
-                <div class="card-body p-2">
-                  <p class="card-text black-text">Nostrum minima cupiditate assumenda, atque cumque hic voluptatibus at corporis maxime quam harum.</p>
-                </div>
-              </div>
-              <div class="d-flex justify-content-start">
-                <div class="profile-photo message-photo">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="avatar rounded-circle mr-2 ml-0">
-                  <span class="state"></span>
-                </div>
-                <div class="card bg-light rounded w-75 z-depth-0 mb-2">
-                  <div class="card-body p-2">
-                    <p class="card-text black-text">Qui animi molestiae autem nihil optio recusandae nisi sit ab quo est.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card bg-primary rounded w-75 float-right z-depth-0 mb-1 last">
-                <div class="card-body p-2">
-                  <p class="card-text text-white">Maxime nostrum ut blanditiis a quod quam, quidem deleniti?</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer text-muted white pt-1 pb-2 px-3">
-        <form action="index?user=1" method="post">
-          <input type="text" id="exampleForm2" name="text" class="form-control" placeholder="Type a message...">
-         <button type="submit" class="btn btn-primary float-right">Envoyer</button>
-        </form>  
-        </div>
-      </div>
-
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Grid row -->
-
+<!-- --------------------------------------------------------------------------- -->
+<c:if test="${empty client }">
+<div class="row">
+<div class="col col-md-6">
+<div id="inscriptionUser" style="width:80%; margin:auto;">
+<h1 class="text-center text-light">INSCRIPTION</h1>
+<c:if test="${not empty exist }">
+<div class="alert alert-danger" role="alert">
+ Veuillez essayer un nouvelle mail
 </div>
+</c:if>
+<form action="<%=request.getContextPath()%>/kplr/inscriptionUser" method="post" enctype="multipart/form-data" onsubmit="return verif();">
+  <div class="mb-3">
+    <label for="nom" class="form-label text-light">Nom</label>
+    <input type="text" required class="form-control" id="nom" name="nom" aria-describedby="emailHelp">    
+  </div>
+  <div class="mb-3">
+    <label for="prenom" class="form-label text-light">Prenom</label>
+    <input type="text" required class="form-control" id="prenom" name="prenom" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label text-light">Mobile</label>
+    <input type="text" required class="form-control" id="exampleInputEmail1" name="mobile" aria-describedby="emailHelp">    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
+    <input type="email" required class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label text-light">Password</label>
+    <input type="password" required class="form-control" name="password" id="exampleInputPassword1">
+  </div>
+   <div class="mb-3">
+   <label for="exampleInputPassword1" class="form-label text-light">Profile picture</label>
+   <img id="selectedImage" src='img/men.jpg' width="20%" onclick="document.getElementById('getFile').click(); return false;">
+	<span onclick="removeImage();" class="btn btn-primary"> Remove image</span>
+	<input type="file" id="getFile" name="image" onchange="loadFile(event)" style="display: none">
+   
+   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+<div class="col col-md-6">
+
+<div id="loginUser" style="width:80%; margin:auto;">
+<h1 class="text-center text-light">LOG IN</h1>
+<c:if test="${not empty failed }">
+<div class="alert alert-danger" role="alert">
+ Email or Password is incorrect try again
+</div>
+</c:if>
+<form action="<%=request.getContextPath()%>/kplr/loginUser" method="post" >
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
+    <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label text-light">Password</label>
+    <input type="password" name="password" required class="form-control" id="exampleInputPassword1">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</c:if>
+<!-- --------------------------------------------------- -->
 		<footer class="text-center small tm-footer">
 			<p class="mb-0">
 				Copyright &copy; 2022 KPLR . <a rel="nofollow"
@@ -522,6 +533,15 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
 ></script>
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('selectedImage');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+function removeImage(){
+	document.getElementById("getFile").value = null;
+	document.getElementById("selectedImage").src= "img/men.jpg";	
+}</script>
 	<script>
 		function getOffSet() {
 			var _offset = 450;

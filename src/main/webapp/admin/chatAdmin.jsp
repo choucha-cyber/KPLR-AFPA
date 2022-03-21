@@ -1,8 +1,8 @@
+
+ <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:import url="headAdmin.jsp"></c:import>
 
-<c:if test="${ !empty sessionScope.nom}">
-        <p> ${ sessionScope.prenom } est bien connecté!</p>
-    </c:if>
+
 
 <div class="card grey lighten-3 chat-room">
   <div class="card-body">
@@ -16,97 +16,29 @@
         <h6 class="font-weight-bold mb-3 text-center text-lg-left">Member</h6>
         <div class="white z-depth-1 px-3 pt-3 pb-0">
           <ul class="list-unstyled friend-list">
+          <c:forEach items="${chats }" var="chat" varStatus="status">
+          <c:if test="${chat.envoyeePar != 0 }">
             <li class="active grey lighten-3 p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>John Doe</strong>
-                  <p class="last-message text-muted">Hello, Are you there?</p>
+              <a href="<%= request.getContextPath() %>/admin/chatAdmin?envoyeePar=<c:out value='${chat.envoyeePar }'/>" class="d-flex justify-content-between">
+              <div class="text-small">
+                  <strong>${chat.client.nom}</strong>
+                  <p class="last-message text-muted">${chat.text}</p>
                 </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">Just now</p>
-                  <span class="badge badge-danger float-right">1</span>
-                </div>
+                 <div class="chat-footer">
+                 <c:set var="date" value="${fn:split(chat.dateEnvoye, ' ')}" /> 
+                 <c:set var="dateOnly" value="${fn:split(date[0], '-')}" /> 
+                  <p class="text-smaller text-muted mb-0">${dateOnly[2]}/${dateOnly[1]}/${dateOnly[0]}
+                  <p class="text-smaller text-muted mb-0">${date[1]}</p></p>
+                  <c:if test="${countUnReads[status.index] != 0 }">
+                  <span class="badge badge-danger float-right">${countUnReads[status.index]}</span>
+                </c:if>
+                </div> 
               </a>
             </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Danny Smith</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">5 min ago</p>
-                  <span class="text-muted float-right"><i class="fas fa-mail-reply" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Alex Steward</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">Yesterday</p>
-                  <span class="text-muted float-right"><i class="fas fa-mail-reply" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-3.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Ashley Olsen</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">Yesterday</p>
-                  <span class="text-muted float-right"><i class="fas fa-mail-reply" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-4.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Kate Moss</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">Yesterday</p>
-                  <span class="text-muted float-right"><i class="fas fa-mail-reply" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Lara Croft</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">Yesterday</p>
-                  <span class="text-muted float-right"><i class="fas fa-mail-reply" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="#" class="d-flex justify-content-between">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1">
-                <div class="text-small">
-                  <strong>Brad Pitt</strong>
-                  <p class="last-message text-muted">Lorem ipsum dolor sit.</p>
-                </div>
-                <div class="chat-footer">
-                  <p class="text-smaller text-muted mb-0">5 min ago</p>
-                  <span class="text-muted float-right"><i class="fas fa-check" aria-hidden="true"></i></span>
-                </div>
-              </a>
-            </li>
+            </c:if>
+           </c:forEach> 
+           
+           
           </ul>
         </div>
 
@@ -115,62 +47,57 @@
 
       <!-- Grid column -->
       <div class="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0">
-
+	<c:if test="${not empty details }">
         <div class="chat-message">
 
           <ul class="list-unstyled chat">
-            <li class="d-flex justify-content-between mb-4">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="avatar rounded-circle mr-2 ml-lg-3 ml-0 z-depth-1">
+          <c:forEach items="${chatsSingleClient }" var="chatSingleClient">
+          <c:if test="${chatSingleClient.envoyeePar != 0 }">
+            <li class="d-flex justify-content-between mb-4 bg-dark">
               <div class="chat-body white p-3 ml-2 z-depth-1">
-                <div class="header">
-                  <strong class="primary-font">Brad Pitt</strong>
-                  <small class="pull-right text-muted"><i class="far fa-clock"></i> 12 mins ago</small>
+                <div class="header text-light">
+                  <strong class="primary-font">${client.nom}</strong>
+                   <c:set var="date2" value="${fn:split(chatSingleClient.dateEnvoye, ' ')}" /> 
+                 <c:set var="dateOnly2" value="${fn:split(date2[0], '-')}" />
+                  <small class="pull-right text-light"><i class="far fa-clock"></i>${dateOnly2[2]}/${dateOnly2[1]}/${dateOnly2[0]} à ${date2[1]}</small>
                 </div>
                 <hr class="w-100">
-                <p class="mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua.
+                <p class="mb-0 text-light">
+                 ${chatSingleClient.text}
                 </p>
               </div>
             </li>
-            <li class="d-flex justify-content-between mb-4">
-              <div class="chat-body white p-3 z-depth-1">
+            </c:if>
+             <c:if test="${chatSingleClient.envoyeePar == 0 }">
+              <li class="d-flex justify-content-end mb-4 bg-secondary">
+              <div class="chat-body white p-3 z-depth-1 text-dark">
                 <div class="header">
-                  <strong class="primary-font">Lara Croft</strong>
-                  <small class="pull-right text-muted"><i class="far fa-clock"></i> 13 mins ago</small>
+                  <strong class="primary-font"> Admin</strong>
+                 <small class="pull-right text-dark"><i class="far fa-clock"></i>${dateOnly2[2]}/${dateOnly2[1]}/${dateOnly2[0]} à ${date2[1]}</small>
                 </div>
                 <hr class="w-100">
-                <p class="mb-0">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                  laudantium.
+                <p class="mb-0 text-dark">
+                 ${chatSingleClient.text}
                 </p>
               </div>
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" alt="avatar" class="avatar rounded-circle mr-0 ml-3 z-depth-1">
-            </li>
-            <li class="d-flex justify-content-between mb-4 pb-3">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="avatar rounded-circle mr-2 ml-lg-3 ml-0 z-depth-1">
-              <div class="chat-body white p-3 ml-2 z-depth-1">
-                <div class="header">
-                  <strong class="primary-font">Brad Pitt</strong>
-                  <small class="pull-right text-muted"><i class="far fa-clock"></i> 12 mins ago</small>
-                </div>
-                <hr class="w-100">
-                <p class="mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua.
-                </p>
-              </div>
-            </li>
+              </li>
+             </c:if>
+         </c:forEach>	
+        
             <li class="white">
+             <form method="post" action="<%= request.getContextPath() %>/admin/chatAdmin?envoyeePar=<c:out value='${chatsSingleClient[0].envoyeePar }'/>">
               <div class="form-group basic-textarea">
-                <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Type your message here..."></textarea>
+                <textarea name="text" class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Type your message here..."></textarea>
+               <button type="submit" class="btn btn-dark btn-rounded btn-sm waves-effect waves-light float-right">Send</button>
+        
               </div>
+               </form>
             </li>
-            <button type="button" class="btn btn-info btn-rounded btn-sm waves-effect waves-light float-right">Send</button>
+           
           </ul>
 
         </div>
-
+</c:if>
       </div>
       <!-- Grid column -->
 

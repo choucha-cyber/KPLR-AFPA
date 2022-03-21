@@ -1,7 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.FormationDao;
-import model.Formation;
+import dao.ChatDao;
+import dao.ClientDao;
+import model.Chat;
+import model.Client;
 
 /**
  * Servlet implementation class ajoutFormationAdmin
@@ -19,8 +21,6 @@ import model.Formation;
 public class chat extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	FormationDao formationDao = new FormationDao();
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,21 +33,28 @@ public class chat extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		request.getRequestDispatcher("/kplr/index.jsp").forward(request, response);
+		ChatDao cdao=new ChatDao();
+		ClientDao clientDao = new ClientDao();
+		int clientId=Integer.parseInt(request.getParameter("clientId"));
+		List<Chat> c=cdao.read(clientId);
+		Client client= clientDao.findById(clientId);
+		request.setAttribute("chats", c);
+		request.setAttribute("client", client);
+		request.getRequestDispatcher("chat.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int senderId=Integer.parseInt(request.getParameter("userId"));
-		String text= request.getParameter("text");	
-//		ChatModel cm= new ChatModel(senderId,message);
-//		ChatDao cdao=new ChatDao();
-//		cdao.create(cm);
+		System.out.println("inside chat post");
+		int envoyeePar=Integer.parseInt(request.getParameter("clientId"));
+		String text= request.getParameter("text");			
+		Chat c=new Chat(envoyeePar,0,text);  // 0 for admin
+		
+		ChatDao cdao=new ChatDao();
+		cdao.create(c);
+		doGet(request,response);
 		
 	}
 
