@@ -1,7 +1,7 @@
 <c:import url="header.jsp"></c:import>
 
 <!-- NOS CLIENTS -->
-<section id="testimonials" class="tm-section-pad-top tm-parallax-2">
+<section id="testimonials" class="tm-section-pad-top tm-parallax-2"style="margin-top: -530px" >
 	<div class="container tm-testimonials-content">
 		<div class="row">
 			<div class="col-lg-12 tm-content-box">

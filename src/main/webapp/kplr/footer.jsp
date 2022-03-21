@@ -1,13 +1,15 @@
 
 <footer class="text-center small tm-footer">
-	<p class="mb-0">
+	<p class="mb-0" >
 		Copyright &copy; 2022 KPLR . <a rel="nofollow"
-			href="https://www.tooplate.com" title="HTML templates">Designed
-			by Shabina@Aisha</a>
+			href="#" title="HTML templates">Designed
+			by Shabina&Aisha</a>
 	</p>
 </footer>
 
 </section>
+
+</div>
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="slick/slick.min.js"></script>
@@ -15,6 +17,7 @@
 <script src="js/easing.min.js"></script>
 <script src="js/jquery.singlePageNav.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <script>
 	function getOffSet() {
 		var _offset = 450;
@@ -202,17 +205,5 @@
 	});
 </script>
 
-</body>
-</html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous"></script>
 </body>
 </html>

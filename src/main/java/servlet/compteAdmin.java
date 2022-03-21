@@ -36,7 +36,7 @@ public class compteAdmin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setAttribute("admins", adminDao.read());
 		request.getRequestDispatcher("compteAdmin.jsp").forward(request, response);
 	}
 

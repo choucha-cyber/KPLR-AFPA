@@ -1,12 +1,12 @@
 <c:import url="header.jsp"></c:import>
 
 <!-- PORTAIL MAROC -->
-<section id="gallery" class="tm-section-pad-top">
+<section id="gallery" class="tm-section-pad-top" style="margin-top: -600px">
 	<div class="container tm-container-gallery">
 		<div class="row">
 			<div class="text-center col-12">
 				<h2 class="tm-text-primary tm-section-title mb-4">Portail Maroc</h2>
-				<p class="mx-auto tm-section-desc">blablabla à Casa on est les
+				<p class="mx-auto tm-section-desc">blablabla &agrave; Casa on est les
 					meilleurs blablabla</p>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i>Physical Health <span>Exercise!</span></i>
+										<i>Nos bureaux <span>à Casablanca</span></i>
 									</h2>
 								</figcaption>
 							</figure>
@@ -30,7 +30,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i>Rain on Glass <span>Second Image</span></i>
+										<i>Seconde ville <span>économique</span></i>
 									</h2>
 								</figcaption>
 							</figure>
@@ -40,7 +40,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i><span>Sea View</span> Mega City</i>
+										<i><span>Riche</span> Culturellement</i>
 									</h2>
 								</figcaption>
 							</figure>
@@ -50,7 +50,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i>Dream Girl <span>Thoughts</span></i>
+										<i>Avec tous <span>les atouts pour votre business</span></i>
 									</h2>
 								</figcaption>
 							</figure>

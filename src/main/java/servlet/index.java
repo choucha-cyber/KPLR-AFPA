@@ -33,7 +33,7 @@ public class index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/kplr/index.jsp").forward(request, response);
 	}
 
 	/**
@@ -41,17 +41,7 @@ public class index extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		String nom = request.getParameter("nom");
-		String email = request.getParameter("email");
-		String mess = request.getParameter("message");
-		
-		Message message = new Message(nom, email, mess);
-		MessageDao messageDao = new MessageDao();
-		
-		messageDao.create(message);
-		System.out.println(message);
-		
+	
 		doGet(request, response);
 	}
 

@@ -10,7 +10,7 @@
 
 	<c:if test="${exist == 'false' }">
 		<div class="alert alert-success" role="alert">
-		  Félicitation
+		  Félicitation, compte crée
 		</div>
 	
 	</c:if>
@@ -33,42 +33,12 @@
 				</div>
 			</div>
 			
-			<!-- LISTE DES ADMIN 
-			<table
-					class="table table-hover table-striped tm-table-striped-even mt-3">
-					<thead>
-						<tr class="tm-bg-gray">
-							<th scope="col">&nbsp;</th>
-							<th scope="col">Titre</th>
-							<th scope="col" class="text-center">Code Formation</th>
-							<th scope="col" class="text-center">Tarif</th>
-							<th scope="col">Dates</th>
-							<th scope="col">&nbsp;</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<c:forEach items="${formations}" var="formation">
-							<tr>
-								<th scope="row"><input type="checkbox"
-									aria-label="Checkbox"></th>
-								<td class="tm-product-name">${formation.titre }</td>
-								<td class="text-center">${formation.code }</td>
-								<td class="text-center">${formation.tarif }</td>
-								<td>Du ${formation.dateDebut } au ${formation.dateFin }</td>
-								<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
-							</tr>
-						</c:forEach>
-
-
-					</tbody>
-				</table>-->
-			<ol
-				class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
-				<li class="tm-list-group-item">Admin 1</li>
-				<li class="tm-list-group-item">Admin 2</li>
-				<li class="tm-list-group-item">Admin 3</li>
-				<li class="tm-list-group-item">Admin 4</li>
+			<!-- LISTE DES ADMIN -->
+			
+			<ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+				<c:forEach items="${admins}" var="admin">
+				<li class="tm-list-group-item">${admin.nom } ${admin.prenom }</li>
+				</c:forEach>
 			</ol>
 		</div>
 	</div>

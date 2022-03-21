@@ -42,41 +42,11 @@
 								<td class="text-center">${formation.tarif }</td>
 								<td>Du ${formation.dateDebut } au ${formation.dateFin }</td>
 								<td data-bs-toggle="modal"
-									data-bs-target="#idFormation-<c:out value="${formation.id }" />">
+									data-bs-target="#idFormation-<c:out value="${formation.id_formation }" />">
 								<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
 
 							</tr>
-							<!-- Modal
-							<div class="modal fade"
-								id="idFormation-<c:out value="${formation.id }" />"
-								data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-								aria-labelledby="staticBackdropLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="staticBackdropLabel">Modal
-												title</h5>
-											<button type="button" class="btn-close"
-												data-bs-dismiss="modal" aria-label="Close"></button>
-										</div>
-										<div class="modal-body">
-											Voulez vous vraiment supprimer cette formation <b><c:out
-													value="${formation.titre }" /></b> ?
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-danger"
-												data-bs-dismiss="modal">Non</button>
-
-											<a href="delete?id=<c:out value="${formation.id }" />">
-												<button type="button" class="btn btn-success">Oui,
-													je confirme</button>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
 							
-							 -->
 						</c:forEach>
 
 

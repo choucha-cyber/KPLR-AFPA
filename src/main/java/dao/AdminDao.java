@@ -7,9 +7,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 import model.Admin;
+import model.Client;
 
 public class AdminDao {
 	Connection connect = Connect.getConnection();
@@ -35,6 +38,32 @@ public class AdminDao {
 			System.out.println("Insertion KO");
 		}
 		return msg;
+	}
+	
+	public List<Admin> read() {
+		List<Admin> listeAdmin = new ArrayList<>();
+
+		// CRUD - Read
+		ResultSet rs = null;
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("SELECT * FROM Admin");
+
+			rs = sql2.executeQuery();
+
+			while (rs.next()) {
+				System.out.println(rs.getInt("id"));
+
+				Admin admin = new Admin(rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+						rs.getString("password"));
+
+				listeAdmin.add(admin);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeAdmin;
 	}
 
 	public boolean mailExist(String email) {
