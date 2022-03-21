@@ -3,7 +3,7 @@
             <div class="row tm-content-row tm-mt-big">
                 <div class="tm-col tm-col-big">
                     <div class="bg-white tm-block h-100">
-                        <h2 class="tm-block-title">Dernières ventes</h2>
+                        <h2 class="tm-block-title">Derni&eacute;res ventes</h2>
                         <canvas id="lineChart"></canvas>
                     </div>
                 </div>
@@ -32,25 +32,25 @@
                         </div>
                         <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
                             <li class="tm-list-group-item">
-                               Eau de rose de Dammas
+                               
                             </li>
                             <li class="tm-list-group-item">
-                                Savon noir
+                                
                             </li>
                             <li class="tm-list-group-item">
-                                Rassoul
+                                
                             </li>
                             <li class="tm-list-group-item">
-                                Henné neutre
+                                
                             </li>
                             <li class="tm-list-group-item">
-                               Gant de crin
+                               
                             </li>
                             <li class="tm-list-group-item">
-                                Gant végétal
+                               
                             </li>
                             <li class="tm-list-group-item">
-                                Khôl
+                               
                             </li>
                         </ol>
                     </div>

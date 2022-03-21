@@ -1,5 +1,8 @@
 
+
 <c:import url="headAdmin.jsp"></c:import>
+
+<c:out value="Bonjour ${admin.prenom } ${admin.nom }" />
 
 
 <div class="container">

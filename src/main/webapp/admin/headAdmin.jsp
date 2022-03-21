@@ -34,7 +34,7 @@
 						class="navbar-brand" href="kplr/index.jsp"> <i
 						class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
 						<h1 class="tm-site-title mb-0">
-							<a href="kplr/index.jsp" style="color: grey; font-size: 12px">Allez
+							<a href="../kplr/index" style="color: grey; font-size: 12px">Allez
 								sur le site web KPLR</a>
 						</h1>
 
@@ -49,20 +49,19 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav mx-auto">
 								<li class="nav-item"><a class="nav-link active"
-									href="loginAdmin.jsp">Admin <span class="sr-only">(current)</span>
+									href="loginAdmin">Admin <span class="sr-only">(current)</span>
 								</a></li>
 								
 								<li class="nav-item"><a class="nav-link"
-									href="formationsAdmin.jsp">Catalogue des formations</a></li>
+									href="formationsAdmin">Catalogue des formations</a></li>
 
 								<li class="nav-item"><a class="nav-link"
-									href="compteAdmin.jsp">Comptes</a></li>
+									href="compteAdmin">Comptes</a></li>
 								
 							</ul>
 							<ul class="navbar-nav">
-								<li class="nav-item"><a class="nav-link d-flex"
-									href="logoutAdmin.jsp"> <i
-										class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
+								<li class="nav-item"><a class="nav-link d-flex" href="logoutAdmin">
+									 <i class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
 								</a></li>
 							</ul>
 							<br>

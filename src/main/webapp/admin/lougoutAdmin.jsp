@@ -14,7 +14,8 @@
 					</div>
 					<div class="row mt-2">
 						<div class="col-12">
-							<form action="<% request.getContextPath(); %>logoutAdmin" method="post">
+							<form action="<%request.getContextPath();%>/admin/logoutAdmin"
+								method="post">
 								<div class="input-group">
 									<label for="username"
 										class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Email</label>
@@ -31,7 +32,7 @@
 								</div>
 								<div class="input-group mt-3">
 									<button type="submit"
-										class="btn btn-primary d-inline-block mx-auto">Deconnexion</button>
+										class="btn btn-primary d-inline-block mx-auto">D&eacute;connexion</button>
 								</div>
 								<div class="input-group mt-3">
 									<p>
@@ -44,6 +45,6 @@
 				</div>
 			</div>
 		</div>
-</div>>
-<c:import url="footerAdmin.jsp"></c:import>
-
+	</div>
+	>
+	<c:import url="footerAdmin.jsp"></c:import>

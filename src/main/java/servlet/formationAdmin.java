@@ -1,8 +1,8 @@
 package servlet;
 
-
-
 import java.io.IOException;
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.FormationDao;
+import model.Formation;
 
 /**
- * Servlet implementation class catalogue
+ * Servlet implementation class ajoutFormationAdmin
  */
-@WebServlet("/kplr/catalogue")
-public class catalogue extends HttpServlet {
+@WebServlet("/admin/formationsAdmin")
+public class formationAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	FormationDao formationDao = new FormationDao();
@@ -23,7 +24,7 @@ public class catalogue extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public catalogue() {
+    public formationAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,19 +34,18 @@ public class catalogue extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// retourne ma liste des formations
 		
-				request.setAttribute("formations", formationDao.read());
-
-				request.getRequestDispatcher("/kplr/catalogue.jsp").forward(request, response);
+		request.setAttribute("formations", formationDao.read());
+		request.getRequestDispatcher("/admin/formationsAdmin.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		
+		
 	}
 
 }

@@ -10,7 +10,8 @@
 			</div>
 			<div class="row mt-4 tm-edit-product-row">
 				<div class="col-xl-7 col-lg-7 col-md-12">
-					<form action="#" class="tm-edit-product-form"><!--  ajouter le action-->
+					<form action="#" class="tm-edit-product-form">
+						<!--  ajouter le action-->
 						<div class="input-group mb-3">
 							<label for="titre"
 								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Titre
@@ -20,19 +21,19 @@
 						</div>
 						<div class="input-group mb-3">
 							<label for="resume"
-								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 mb-2">Resumé</label>
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 mb-2">Resum&eacute;</label>
 							<textarea
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
-								rows="3" placeholder="resumé" required></textarea>
+								rows="3" placeholder="resum&eacute;" required></textarea>
 						</div>
 						<div class="input-group mb-3">
 							<label for="category"
-								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Categorie</label>
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Cat&eacute;gorie</label>
 							<select class="custom-select col-xl-9 col-lg-8 col-md-8 col-sm-7"
 								id="category">
-								<option value="1" selected>Coup de coeur</option>
-								<option value="2">Promo</option>
-								<option value="3">Nouveauté</option>
+								<option value="1" selected>BIG DATA</option>
+								<option value="2">PYTHON</option>
+								<option value="3">GESTION DE PROJET</option>
 							</select>
 						</div>
 						<div class="input-group mb-3">

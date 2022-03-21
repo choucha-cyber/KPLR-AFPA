@@ -1,8 +1,26 @@
 <c:import url="headAdmin.jsp"></c:import>
 
-<c:if test="${ !empty sessionScope.nom}">
-        <p> ${ sessionScope.prenom } est bien connecté!</p>
-    </c:if>
+	<c:if test="${ !empty sessionScope.nom}">
+        <p> ${ sessionScope.prenom } est bien connect&eacute;!</p>
+  	</c:if>
+    
+    <c:out value="Bonjour ${admin.prenom } ${admin.nom }" />	
+
+
+
+	<c:if test="${exist == 'false' }">
+		<div class="alert alert-success" role="alert">
+		  FÃ©licitation
+		</div>
+	
+	</c:if>
+	
+	<c:if test="${exist }">
+		<div class="alert alert-danger" role="alert">
+		  Oups, le mail existe deja !
+		</div>
+	
+	</c:if>
 
 
 <!-- row -->
@@ -15,7 +33,36 @@
 				</div>
 			</div>
 			
-			<!-- ICI ON AFFICHE LA LISTE DES ADMIN -->
+			<!-- LISTE DES ADMIN 
+			<table
+					class="table table-hover table-striped tm-table-striped-even mt-3">
+					<thead>
+						<tr class="tm-bg-gray">
+							<th scope="col">&nbsp;</th>
+							<th scope="col">Titre</th>
+							<th scope="col" class="text-center">Code Formation</th>
+							<th scope="col" class="text-center">Tarif</th>
+							<th scope="col">Dates</th>
+							<th scope="col">&nbsp;</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<c:forEach items="${formations}" var="formation">
+							<tr>
+								<th scope="row"><input type="checkbox"
+									aria-label="Checkbox"></th>
+								<td class="tm-product-name">${formation.titre }</td>
+								<td class="text-center">${formation.code }</td>
+								<td class="text-center">${formation.tarif }</td>
+								<td>Du ${formation.dateDebut } au ${formation.dateFin }</td>
+								<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
+							</tr>
+						</c:forEach>
+
+
+					</tbody>
+				</table>-->
 			<ol
 				class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
 				<li class="tm-list-group-item">Admin 1</li>
@@ -25,11 +72,13 @@
 			</ol>
 		</div>
 	</div>
+	
+	<!-- CREATION COMPTE ADMIN -->
 	<div class="tm-col tm-col-big">
 		<div class="bg-white tm-block">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="tm-block-title">Création compte admin</h2>
+					<h2 class="tm-block-title">Cr&eacute;ation compte admin</h2>
 				</div>
 			</div>
 
@@ -43,7 +92,7 @@
 								name="nom" type="text" class="form-control validate">
 						</div>
 						<div class="form-group">
-							<label for="prenom">Prénom</label> <input placeholder="prenom" id="prenom"
+							<label for="prenom">Pr&eacute;nom</label> <input placeholder="prenom" id="prenom"
 								name="prenom" type="text" class="form-control validate">
 						</div>
 						<div class="form-group">
@@ -64,7 +113,7 @@
 			
 						<div class="row">
 							<div class="col-12 col-sm-6">
-								<button type="submit" class="btn btn-primary">Créer
+								<button type="submit" class="btn btn-primary">Cr&eacute;er
 									compte</button>
 							</div>
 							<div class="col-12 col-sm-6 tm-btn-right">

@@ -12,7 +12,7 @@
 			<div class="row mt-4 tm-edit-product-row">
 				<div class="col-xl-7 col-lg-7 col-md-12">
 					<form method="post"
-				action="<%= request.getContextPath() %>/admin/ajoutFormationAdmin">
+						action="<%=request.getContextPath()%>/admin/ajoutFormationAdmin">
 
 						<div class="input-group mb-3">
 							<label for="titre"
@@ -22,13 +22,13 @@
 						</div>
 						<div class="input-group mb-3">
 							<label for="code"
-								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Code formation
-							</label> <input id="code" name="code" type="text"
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Code
+								formation </label> <input id="code" name="code" type="text"
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
 						</div>
 						<div class="input-group mb-3">
 							<label for="duree"
-								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Durée
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Dur&eacute;e
 							</label> <input id="duree" name="duree" type="number"
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
 						</div>
@@ -39,9 +39,17 @@
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
 						</div>
 						<div class="input-group mb-3">
-							<label for="date"
+							<label for="dateDebut"
 								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">
-								Date </label> <input id="date" name="date" type="text"
+								Date d&eacute;but </label> <input id="dateDebut" name="dateDebut"
+								type="date"
+								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
+								data-large-mode="true">
+						</div>
+						<div class="input-group mb-3">
+							<label for="dateFin"
+								class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">
+								Date fin </label> <input id="datefin" name="dateFin" type="date"
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
 								data-large-mode="true">
 						</div>
@@ -52,8 +60,8 @@
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
 								rows="3" name="contenu"></textarea>
 						</div>
-		
-				
+
+
 						<div class="input-group mb-3">
 							<div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
 								<button type="submit" class="btn btn-primary">Ajouter</button>
