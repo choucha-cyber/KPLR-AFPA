@@ -100,9 +100,10 @@ blockquote {
 
 .nav-item {
   list-style: none;
+  
 }
 
-.tm-nav-link {
+.nav-link {
   color: white;
 }
 

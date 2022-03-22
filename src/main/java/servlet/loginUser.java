@@ -6,23 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dao.MessageDao;
-
-import model.Message;
-
+import dao.ClientDao;
 
 /**
- * Servlet implementation class index
+ * Servlet implementation class Login
  */
-@WebServlet("/kplr/index")
-public class index extends HttpServlet {
+@WebServlet("/kplr/loginUser")
+public class loginUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public index() {
+    public loginUser() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,32 +29,27 @@ public class index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("error")!=null) {
-			System.out.println("this is after error");
-		}
-		request.getRequestDispatcher("/kplr/index.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("compte/login.jsp").forward(request, response);
 	}
 
 	/**
-	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		String nom = request.getParameter("nom");
-		String email = request.getParameter("email");
-		String mess = request.getParameter("message");
-		
-		Message message = new Message(nom, email, mess);
-		MessageDao messageDao = new MessageDao();
-		
-		messageDao.create(message);
-		System.out.println(message);
-		
-		
-		
-		doGet(request, response);
+		System.out.println("inside login post");
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		ClientDao cDao=new ClientDao();
+		if(cDao.login(email, password)!=null) {
+			HttpSession session=request.getSession();
+			session.setAttribute("client", cDao.login(email, password));		
+			response.sendRedirect("index");
+		}
+		else {
+			request.setAttribute("failed","failed");
+			request.getRequestDispatcher("/kplr/index.jsp").forward(request, response);
+		}
 	}
 
 }

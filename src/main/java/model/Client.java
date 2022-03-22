@@ -1,63 +1,84 @@
 package model;
 
+import java.util.Date;
+
 public class Client {
 	
 	private int id_client;//AI
 	private String nom;
-	private String adresse;
-	private String email;
+	private String prenom;
 	private String tel;
+	private String email;
+	private String password;
+	private String image;
+	private Date dateInscription;
+	
 	
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Client(int id_client, String nom, String adresse, String email, String tel) {
+
+
+	public Client( String nom, String prenom, String tel, String email, String password, String image) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.email = email;
+		this.password = password;
+		this.image = image;
+	}
+
+
+	public Client(int id_client, String nom, String prenom, String tel, String email, String image, Date dateInscription) {
 		super();
 		this.id_client = id_client;
 		this.nom = nom;
-		this.adresse = adresse;
-		this.email = email;
+		this.prenom = prenom;
 		this.tel = tel;
-	}
-	public Client(String nom, String adresse, String email, String tel) {
-		super();
-		this.nom = nom;
-		this.adresse = adresse;
 		this.email = email;
-		this.tel = tel;
+		this.image = image;
+		this.dateInscription = dateInscription;
 	}
+
+
 	public int getId_client() {
 		return id_client;
 	}
-	public void setId_client(int id_client) {
-		this.id_client = id_client;
-	}
+
+
 	public String getNom() {
 		return nom;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+
+
+	public String getPrenom() {
+		return prenom;
 	}
-	public String getAdresse() {
-		return adresse;
-	}
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+
+
 	public String getTel() {
 		return tel;
 	}
-	public void setTel(String tel) {
-		this.tel = tel;
+
+
+	public String getEmail() {
+		return email;
 	}
-	
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public String getImage() {
+		return image;
+	}
+	public Date getDateInscription() {
+		return dateInscription;
+	}
 	
 	
 

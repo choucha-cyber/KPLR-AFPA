@@ -18,7 +18,7 @@ public class FormationDao implements Idao<Formation> {
 		boolean msg = false;
 		try {
 			PreparedStatement req = connect.prepareStatement(
-					"INSERT INTO Formation (titre, code, duree, tarif, dateDebut, dateFin, contenu) VALUES (?,?,?,?,?,?,?)");
+					"INSERT INTO formation (titre, code, duree, tarif, dateDebut, dateFin, contenu) VALUES (?,?,?,?,?,?,?)");
 			req.setString(1, object.getTitre());
 			req.setString(2, object.getCode());
 			req.setInt(3, object.getDuree());

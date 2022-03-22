@@ -1,7 +1,8 @@
 <c:import url="header.jsp"></c:import>
 
 
-<div class="container">
+<div class="container" style="margin-top: -500px; width:80%;">
+<section id="commande">
 	<div class="row tm-content-row tm-mt-big">
 		<div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
 			<div class="bg-white tm-block h-100">
@@ -11,7 +12,7 @@
 
 					</div>
 					<div class="col-md-4 col-sm-12 text-right">
-						<a href="commande.jsp" class="btn btn-small btn-primary">retournez aux choix</a>
+						<a href="commande.jsp" class="btn btn-small btn-primary">retournez au catalogue</a>
 					</div>
 				</div>
 				<div class="table-responsive">
@@ -58,6 +59,8 @@
 			</div>
 		</div>
 	</div>
+	
+	</section>
 </div>
 
 <c:import url="footer.jsp"></c:import>

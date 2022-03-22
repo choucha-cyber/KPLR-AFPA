@@ -5,7 +5,7 @@
 <section id="whatwedo" class="tm-section-pad-top" style="margin-top:-570px">
 
 
-	<div class="container">
+	<div class="container" style="width:80%">
 
 		<div class="row tm-content-box">
 			<!-- first row -->
@@ -32,6 +32,7 @@
 			</div>
 
 		</div>
+		<br><br>
 		<!-- first row -->
 
 		<div class="row tm-content-box">
@@ -167,7 +168,7 @@
 					</p>
 				</div>
 				<br><br>
-				<c:import url="footer.jsp"></c:import>
+				
 			</div>
 
 		</div>
@@ -179,3 +180,4 @@
 
 
 
+<c:import url="footer.jsp"></c:import>

@@ -17,12 +17,10 @@
 
 			<div class="col-sm-12 col-md-6">
 
-				<form action="<%=request.getContextPath()%>/index" method="post">
-					<input id="name" name="nom" type="text" placeholder="Votre Nom"
-						class="tm-input" required /> <input id="email" name="email"
-						type="email" placeholder="Votre Email" class="tm-input" required />
-					<textarea id="message" name="message" rows="8"
-						placeholder="Message" class="tm-input" required></textarea>
+				<form action="<%=request.getContextPath()%>/kplr/index" method="post">
+					<input id="name" name="nom" type="text" placeholder="Votre Nom" class="tm-input" required />
+					<input id="email" name="email" type="email" placeholder="Votre Email" class="tm-input" required />
+					<textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
 					<button type="submit" class="btn tm-btn-submit">Soumettre</button>
 				</form>
 			</div>
@@ -30,10 +28,18 @@
 			<div class="col-sm-12 col-md-6">
 
 				<div class="contact-item">
-					<a rel="nofollow" href="#chat" class="item-link"> <i
-						class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
-							Online</span>
-					</a>
+				<c:if test="${not empty client}">
+					<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/chat?clientId=<c:out value='${client.id_client }'/>" class="item-link"> <i
+							class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
+								Online</span>
+						</a>
+						</c:if>
+						<c:if test="${empty client}">
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser" class="item-link"> <i
+							class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
+								Online</span>
+						</a>
+						</c:if>
 				</div>
 
 				<div class="contact-item">
