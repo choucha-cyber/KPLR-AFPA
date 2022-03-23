@@ -2,7 +2,7 @@
 
 
 <!-- Contact -->
-<section id="contact" class="tm-section-pad-top tm-parallax-2" style="margin-top: -500px">
+<section id="contact" class="tm-section-pad-top tm-parallax-2" style="margin-top: -45%">
 
 	<div class="container tm-container-contact">
 
@@ -35,7 +35,7 @@
 						</a>
 						</c:if>
 						<c:if test="${empty client}">
-						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser" class="item-link"> <i
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/inscriptionUser" class="item-link"> <i
 							class="far fa-2x fa-comment mr-4"></i> <span class="mb-0">Chat
 								Online</span>
 						</a>

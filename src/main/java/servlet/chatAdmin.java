@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ChatDao;
 import dao.ClientDao;
@@ -63,6 +64,9 @@ public class chatAdmin extends HttpServlet {
 		int countUnRead=cDao.countUnRead(chats.get(i).getEnvoyeePar());		
 		countUnReads.add(countUnRead);
 		}
+		HttpSession session = request.getSession();
+		session.setAttribute("totalUnReadChat", cDao.countTotalUnRead());
+		
 		request.setAttribute("countUnReads", countUnReads);		
 		request.setAttribute("chats", chats);
 		

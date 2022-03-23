@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AdminDao;
+import dao.ChatDao;
+import dao.MessageDao;
 
 
 /**
@@ -48,10 +50,16 @@ public class loginAdmin extends HttpServlet {
 			HttpSession session = request.getSession();
 
 			session.setAttribute("admin", ad.login(email, password));
+			
+			ChatDao cDao=new ChatDao();
+			session.setAttribute("totalUnReadChat", cDao.countTotalUnRead());
+			
+			MessageDao mDao=new MessageDao();
+			session.setAttribute("countMessageUnRead", mDao.countMessageUnRead());
+			
 
-			response.sendRedirect("admin");
+			response.sendRedirect("formationsAdmin");
 		} else {
-			System.out.println("Oups: pas loggé");
 			doGet(request, response);
 		}
 	

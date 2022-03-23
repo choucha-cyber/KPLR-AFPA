@@ -4,7 +4,7 @@
 
 	<!-- INSCRIPTION USER -->
 	<section id="inscription"
-		style="margin-top: -600px; margin-left: 7rem; width: 80%;">
+		style="margin-top: -700px; margin-left: 7rem; width: 80%;">
 
 
 		<c:if test="${empty client }">

@@ -11,17 +11,39 @@
     <div class="row px-lg-2 px-2">
 
       <!-- Grid column -->
-      <div class="col-md-6 col-xl-4 px-0">
+      <div class="col-md-6 col-xl-4 px-0 " >
 
-        <h6 class="font-weight-bold mb-3 text-center text-lg-left">Member</h6>
+        <h6 class="font-weight-bold mb-3 text-center text-lg-left">Clients</h6>
         <div class="white z-depth-1 px-3 pt-3 pb-0">
           <ul class="list-unstyled friend-list">
           <c:forEach items="${chats }" var="chat" varStatus="status">
           <c:if test="${chat.envoyeePar != 0 }">
             <li class="active grey lighten-3 p-2">
+             <img data-bs-toggle="modal" data-bs-target="#exampleModal<c:out value="${chat.id_chat }"/>" class="float-left " src="img/delete.png" width="20"/>
+            
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<c:out value="${chat.id_chat }"/>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
+       Voulez vous vraiment supprimer le conversation avec le client <b>${chat.client.nom}</b>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+       <a href="<%= request.getContextPath() %>/admin/deleteChatAdmin?envoyeePar=<c:out value='${chat.envoyeePar }'/>">
+        <button type="button" class="btn btn-primary">Oui</button>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
               <a href="<%= request.getContextPath() %>/admin/chatAdmin?envoyeePar=<c:out value='${chat.envoyeePar }'/>" class="d-flex justify-content-between">
               <div class="text-small">
-                  <strong>${chat.client.nom}</strong>
+                  <strong>      ${chat.client.nom}</strong>
                   <p class="last-message text-muted">${chat.text}</p>
                 </div>
                  <div class="chat-footer">
@@ -34,6 +56,7 @@
                 </c:if>
                 </div> 
               </a>
+             
             </li>
             </c:if>
            </c:forEach> 
@@ -46,9 +69,9 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0">
+      <div class="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0 " >
 	<c:if test="${not empty details }">
-        <div class="chat-message">
+        <div class="chat-message" >
 
           <ul class="list-unstyled chat">
           <c:forEach items="${chatsSingleClient }" var="chatSingleClient">
@@ -106,7 +129,6 @@
 
   </div>
 </div>
-
 
 
 <c:import url="footerAdmin.jsp"></c:import>

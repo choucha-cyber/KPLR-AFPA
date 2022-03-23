@@ -9,10 +9,10 @@ public class Connect {
 		
 		public static Connection getConnection() {
 			
-			String url = "jdbc:mysql://localhost:8889/";
-			String dbName = "kplr_afpa";
+			String url = "jdbc:mysql://localhost:/";
+			String dbName = "kplr-afpa";
 			String user = "root";
-			String password = "root";
+			String password = "";
 			
 			Connection connect =  null;
 			try {

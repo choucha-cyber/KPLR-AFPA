@@ -1,7 +1,7 @@
 <c:import url="header.jsp"></c:import>
 
 <!-- PORTAIL MAROC -->
-<section id="gallery" class="tm-section-pad-top" style="margin-top: -600px">
+<section id="gallery" class="tm-section-pad-top" style="margin-top: -50%">
 	<div class="container tm-container-gallery">
 		<div class="row">
 			<div class="text-center col-12">

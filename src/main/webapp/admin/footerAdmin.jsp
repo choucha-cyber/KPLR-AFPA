@@ -6,6 +6,7 @@
                 </p>
             </div>
   </footer>
+  
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -24,13 +25,20 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
- <script>
- </script>
-   
+ 
+ <!-- data tables -->  
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(function () {
             $('#expire_date').datepicker();
         });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
     </script>
    
 </body>

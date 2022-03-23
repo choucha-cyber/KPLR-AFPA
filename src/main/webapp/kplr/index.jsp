@@ -26,7 +26,7 @@
 						</a>
 						</c:if>
 						<c:if test="${empty client}">
-						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser"> <i
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/inscriptionUser"> <i
 							class="far fa-2x fa-comment mr-4"></i>
 						</a>
 						</c:if>

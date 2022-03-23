@@ -29,8 +29,6 @@ public class AdminDao {
 
 			req.executeUpdate();
 
-			System.out.println(object.getNom() + " " + object.getEmail() + "  " + object.getPassword()
-					+ " a été bien ajouté en base");
 			msg = true;
 
 		} catch (Exception e) {
