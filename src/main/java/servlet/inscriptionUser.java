@@ -63,8 +63,8 @@ public class inscriptionUser extends HttpServlet {
 		if(imageFileName!="") {
 			
 		
-		//String uploadPath="C:/Users/shabi/OneDrive/Documents/workspaceJ2E/stageProject/KPLR-AFPA/src/main/webapp/kplr/img/"+imageName;
-		String uploadPath="C:/Utilisateurs/MOI/eclipse-workspace/JEE/KPLR-AFPA/src/main/webapp/kplr/img/"+imageName;
+		String uploadPath="C:/Users/shabi/OneDrive/Documents/workspaceJ2E/stageProject/KPLR-AFPA/src/main/webapp/kplr/img/"+imageName;
+		//String uploadPath="C:/Utilisateurs/MOI/eclipse-workspace/JEE/KPLR-AFPA/src/main/webapp/kplr/img/"+imageName;
 		try {
 		FileOutputStream fos=new FileOutputStream(uploadPath);
 		InputStream is=file.getInputStream();

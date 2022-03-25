@@ -37,9 +37,17 @@
     </script>
     <script>
     $(document).ready(function() {
-        $('#messageTable').DataTable();
+        $('#formationTable').DataTable();
     } );
+    
     </script>
+     <script>
+    $(document).ready(function() {
+        $('#messageT').DataTable();
+    } );
+    
+    </script>
+    
     <script>
 		var loadFile = function(event) {
 		var image = document.getElementById('selectedImage');
@@ -50,7 +58,11 @@
 		document.getElementById("selectedImage").src= "../kplr/img/formations/placeHolder.jpg";	
 		}		
 	</script>
-	
+	<script>
+$(document).ready( function () {
+    $('#userTable').DataTable();
+} );
+</script>
   
 </body>
 

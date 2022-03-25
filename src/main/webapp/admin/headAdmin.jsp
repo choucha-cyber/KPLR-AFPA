@@ -58,6 +58,9 @@
 								
 								<li class="nav-item"><a class="nav-link"
 									href="formationsAdmin">Catalogue des formations</a></li>
+									
+								<li class="nav-item"><a class="nav-link"
+									href="users">Users</a></li>
 
 								<li class="nav-item"><a class="nav-link"
 									href="compteAdmin">Comptes</a></li>

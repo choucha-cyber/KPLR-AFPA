@@ -1,6 +1,8 @@
 <c:import url="headAdmin.jsp"></c:import>
-<div class="table-responsive">
-	<table id="messageTable"
+<div class="bg-white tm-block h-100">
+ <div class="table-responsive">
+ <h1 class="text-center"> Les messages</h1>
+	<table id="messageT"
 		class="table table-striped table-bordered table-light "
 		style="width: 100%">
 		<thead>
@@ -8,6 +10,8 @@
 				<th>Nom</th>
 				<th>Message</th>
 				<th>Email</th>
+				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -92,5 +96,6 @@
 			</tr>
 		</tfoot>
 	</table>
+</div> 
 </div>
 <c:import url="footerAdmin.jsp"></c:import>
