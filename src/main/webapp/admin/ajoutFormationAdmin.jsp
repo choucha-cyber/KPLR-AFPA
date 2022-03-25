@@ -1,7 +1,7 @@
 <c:import url="headAdmin.jsp"></c:import>
 <!-- row -->
 <div class="row tm-mt-big">
-	<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+	<div class="col-lg-12 col-md-12 col-sm-12">
 		<div class="bg-white tm-block">
 			<div class="row">
 				<div class="col-12">
@@ -10,9 +10,9 @@
 				</div>
 			</div>
 			<div class="row mt-4 tm-edit-product-row">
-				<div class="col-xl-7 col-lg-7 col-md-12">
+				<div class="col-xl-12 col-lg-12 col-md-12 ">
 					<form method="post"
-						action="<%=request.getContextPath()%>/admin/ajoutFormationAdmin">
+						action="<%=request.getContextPath()%>/admin/ajoutFormationAdmin" enctype="multipart/form-data">
 
 						<div class="input-group mb-3">
 							<label for="titre"
@@ -60,11 +60,20 @@
 								class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
 								rows="3" name="contenu"></textarea>
 						</div>
+						
+						<div class="mb-3" style="display:inline;">
+								<label for="exampleInputPassword1" class="form-label text-light">Photo
+									de profil</label> <img id="selectedImage" src='../kplr/img/formations/placeHolder.jpg' width="20%"
+									onclick="document.getElementById('getFile').click(); return false;">
+								<span onclick="removeImage();" class="btn btn-dark">
+									Supprimer image</span> <input type="file" id="getFile" name="image"
+									onchange="loadFile(event)" style="display: none">
 
+							</div>
 
 						<div class="input-group mb-3">
 							<div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
-								<button type="submit" class="btn btn-primary">Ajouter</button>
+								<button type="submit" class="btn btn-dark">Ajouter</button>
 							</div>
 						</div>
 					</form>

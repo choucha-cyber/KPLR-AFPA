@@ -2,21 +2,18 @@
 
 <!-- row -->
 <div class="row tm-content-row tm-mt-big">
-	<div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+	<!-- <div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col"> -->
+	<div class="col-lg-12 tm-md-12 tm-sm-12 tm-col">
 		<div class="bg-white tm-block h-100">
 			<div class="row">
 				<div class="col-md-8 col-sm-12">
 					<h2 class="tm-block-title d-inline-block">Catalogue</h2>
 
 				</div>
-				<div class="col-md-4 col-sm-12 text-right">
-					<a href="ajoutFormationAdmin.jsp" class="btn btn-small btn-primary">Ajouter
+				<div class="col-md-4 col-sm-12 text-right ">				
+					<a href="ajoutFormationAdmin.jsp" class="btn btn-small btn-dark">Ajouter
 						formation</a>
-				</div>
-				<div class="col-md-4 col-sm-12 text-right">
-					<a href="updateFormation.jsp" class="btn btn-small btn-primary">Modifier
-						Formation</a>
-				</div>
+				</div>				
 			</div>
 			<div class="table-responsive">
 				<table
@@ -28,7 +25,9 @@
 							<th scope="col" class="text-center">Code Formation</th>
 							<th scope="col" class="text-center">Tarif</th>
 							<th scope="col">Dates</th>
-							<th scope="col">&nbsp;</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							
 						</tr>
 					</thead>
 					<!-- ICI LISTE DES FORMATIONS AJOUTEES EN BDD -->
@@ -41,9 +40,34 @@
 								<td class="text-center">${formation.code }</td>
 								<td class="text-center">${formation.tarif }</td>
 								<td>Du ${formation.dateDebut } au ${formation.dateFin }</td>
-								<td data-bs-toggle="modal"
-									data-bs-target="#idFormation-<c:out value="${formation.id_formation }" />">
-								<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
+								<td><a href="<%=request.getContextPath()%>/admin/updateFormation?formationId=<c:out value="${formation.id_formation }" />"><i class="fas fa-pencil-alt tm-pencil-icon text-dark"></i></a></td>
+								<td><i class="fas fa-trash-alt tm-trash-icon" data-bs-toggle="modal"
+					data-bs-target="#deleteModal<c:out value='${formation.id_formation}'/>"></i>
+								<div class="modal fade"
+						id="deleteModal<c:out value='${formation.id_formation }'/>"
+						tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title text-dark" id="exampleModalLabel">Supprimer</h5>
+									<button type="button" class="btn-close btn-dark"
+										data-bs-dismiss="modal" aria-label="Close">X</button>
+								</div>
+								<div class="modal-body">Voulez vous vraiement supprimer la formation
+									 <b>${formation.titre}</b></div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Non</button>
+									<a href="<%= request.getContextPath() %>/admin/formationsAdmin?formationId=<c:out value='${formation.id_formation }'/>">
+										<button type="button" class="btn btn-dark">Oui</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div> 
+				
+								</td>								
 
 							</tr>
 							
@@ -76,34 +100,7 @@
 		</div>
 	</div>
 
-	<div class="col-xl-4 col-lg-12 tm-md-12 tm-sm-12 tm-col">
-		<div class="bg-white tm-block h-100">
-			<h2 class="tm-block-title d-inline-block">Cat&eacute;gories</h2>
-			<table class="table table-hover table-striped mt-3">
-				<tbody>
-					<tr>
-						<td>1. BIG DATA</td>
-						<td class="tm-trash-icon-cell"><i
-							class="fas fa-trash-alt tm-trash-icon"></i></td>
-					</tr>
-					<tr>
-						<td>2. PYTHON</td>
-						<td class="tm-trash-icon-cell"><i
-							class="fas fa-trash-alt tm-trash-icon"></i></td>
-					</tr>
-					<tr>
-						<td>3. GESTION PROJET</td>
-						<td class="tm-trash-icon-cell"><i
-							class="fas fa-trash-alt tm-trash-icon"></i></td>
-					</tr>
-
-				</tbody>
-			</table>
-
-			<a href="#" class="btn btn-primary tm-table-mt">Ajouter une
-				Cat&eacute;gorie</a>
-		</div>
-	</div>
+	
 </div>
 
 <c:import url="footerAdmin.jsp"></c:import>

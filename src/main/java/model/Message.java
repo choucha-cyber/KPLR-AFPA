@@ -6,18 +6,20 @@ public class Message {
 	private String nom;
 	private String email;
 	private String message;
+	private int repondu;
 	
 	public Message() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Message(int id_message, String nom, String email, String message) {
+	public Message(int id_message, String nom, String email, String message, int repondu) {
 		super();
 		this.id_message = id_message;
 		this.nom = nom;
 		this.email = email;
 		this.message = message;
+		this.repondu = repondu;
 	}
 
 	public Message(String nom, String email, String message) {
@@ -59,7 +61,9 @@ public class Message {
 		this.message = message;
 	}
 	
-	
+	public int getRepondu() {
+		return repondu;
+	}
 	
 	
 

@@ -62,10 +62,12 @@ public class messageAdmin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+		int messageIdRepondu=Integer.parseInt(request.getParameter("messageIdRepondu"));
 		String email=request.getParameter("email");
 		String message=request.getParameter("message");
 		MailVerif.sendMail(email,message);
+		MessageDao mDao=new MessageDao();
+		mDao.repondu(messageIdRepondu);
 		doGet(request,response);
 	}
 

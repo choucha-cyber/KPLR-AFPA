@@ -44,13 +44,13 @@ public class MessageDao implements Idao<Message>{
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT * FROM message ");
+			sql2 = connect.prepareStatement("SELECT * FROM message ORDER BY repondu ");
 			
 			rs = sql2.executeQuery();
 
 			while (rs.next()) {
 
-				Message message = new Message(rs.getInt("id_message"),rs.getString("nom"), rs.getString("email"), rs.getString("message"));
+				Message message = new Message(rs.getInt("id_message"),rs.getString("nom"), rs.getString("email"), rs.getString("message"), rs.getInt("repondu"));
 
 				listeMessage.add(message);
 				
@@ -127,6 +127,20 @@ public class MessageDao implements Idao<Message>{
 		try {
 			sql2 = connect.prepareStatement("UPDATE message SET vueAdmin=? ");			
 			sql2.setInt(1, 1);
+			sql2.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void repondu(int messageIdRepondu) {
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("UPDATE message SET repondu=? WHERE id_message=?");			
+			sql2.setInt(1, 1);
+			sql2.setInt(2, messageIdRepondu);
 			sql2.executeUpdate();
 
 		} catch (SQLException e) {

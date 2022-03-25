@@ -37,10 +37,21 @@
     </script>
     <script>
     $(document).ready(function() {
-        $('#example').DataTable();
+        $('#messageTable').DataTable();
     } );
     </script>
-   
+    <script>
+		var loadFile = function(event) {
+		var image = document.getElementById('selectedImage');
+		image.src = URL.createObjectURL(event.target.files[0]);
+		};
+		function removeImage(){
+		document.getElementById("getFile").value = null;
+		document.getElementById("selectedImage").src= "../kplr/img/formations/placeHolder.jpg";	
+		}		
+	</script>
+	
+  
 </body>
 
 </html>

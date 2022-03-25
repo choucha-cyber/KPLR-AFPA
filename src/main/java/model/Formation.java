@@ -12,13 +12,14 @@ public class Formation {
 	private String dateDebut;
 	private String dateFin;
 	private String contenu;
+	private String image;
 	
 	public Formation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Formation(int id_formation, String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu) {
+	public Formation(int id_formation, String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu, String image) {
 		super();
 		this.id_formation = id_formation;
 		this.titre = titre;
@@ -28,9 +29,10 @@ public class Formation {
 		this.dateDebut = dateDebut;
 		this.dateFin=dateFin;
 		this.contenu = contenu;
+		this.image= image;
 	}
 
-	public Formation(String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu) {
+	public Formation(String titre, String code, int duree, int tarif, String dateDebut,String dateFin, String contenu, String image) {
 		super();
 		this.titre = titre;
 		this.code = code;
@@ -39,6 +41,7 @@ public class Formation {
 		this.dateDebut=dateDebut;
 		this.dateFin=dateFin;		
 		this.contenu = contenu;
+		this.image= image;
 	}
 
 	public int getId_formation() {
@@ -101,6 +104,10 @@ public class Formation {
 	public String getContenu() {
 		return contenu;
 	}
+	public String getImage() {
+		return image;
+	}
+
 
 	public void setContenu(String contenu) {
 		this.contenu = contenu;
