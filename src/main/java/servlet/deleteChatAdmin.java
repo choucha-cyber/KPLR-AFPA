@@ -6,19 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+
+import dao.ChatDao;
 
 /**
  * Servlet implementation class logoutAdmin
  */
-@WebServlet("/admin/logoutAdmin")
-public class logoutAdmin extends HttpServlet {
+@WebServlet("/admin/deleteChatAdmin")
+public class deleteChatAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public logoutAdmin() {
+	public deleteChatAdmin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,9 +32,10 @@ public class logoutAdmin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		HttpSession session=request.getSession();
-		session.invalidate();
-		response.sendRedirect("formationsAdmin");
+		ChatDao cDao=new ChatDao();
+		int envoyeePar= Integer.parseInt(request.getParameter("envoyeePar"));
+		cDao.deleteByClient(envoyeePar);
+		response.sendRedirect("chatAdmin");
 	}
 
 	/**

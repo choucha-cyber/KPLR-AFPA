@@ -19,10 +19,10 @@ public class CommandeDao implements Idao<Commande>{
 		boolean msg = false;
 		try {
 			PreparedStatement req = connect.prepareStatement(
-					"INSERT INTO commande (montant, nom_client, email-client) VALUES (?,?,?)");
-			req.setInt(1, object.getMontant());
-			req.setString(2, object.getNom_client());
-			req.setString(3, object.getEmail());
+					"INSERT INTO commande (montant, id_client) VALUES (?,?)");
+			req.setDouble(1, object.getMontant());
+			req.setInt(2, object.getId_client());
+			
 
 			req.executeUpdate();
 
@@ -52,8 +52,8 @@ public class CommandeDao implements Idao<Commande>{
 
 				// int id_commande, int montant, String nom_client, String email
 
-				Commande commande = new Commande(rs.getInt("id_commande"), rs.getInt("montant"),
-						rs.getString("nom_client"), rs.getString("email"));
+				Commande commande = new Commande(rs.getInt("id_commande"), rs.getDouble("montant"),
+						rs.getInt("id_client"));
 
 				listeCommande.add(commande);
 			}
@@ -90,12 +90,12 @@ public class CommandeDao implements Idao<Commande>{
 
 			if (resultSet.next()) {
 				int id_commande = resultSet.getInt("id_commande");
-				int montant = resultSet.getInt("montant");
-				String nom_client = resultSet.getString("nom_client");
-				String email = resultSet.getString("email_client");
+				Double montant = resultSet.getDouble("montant");
+				int id_client = resultSet.getInt("id_client");
+				
 				
 
-				commande = new Commande(id_commande, montant, nom_client, email);
+				commande = new Commande(id_commande, montant, id_client);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

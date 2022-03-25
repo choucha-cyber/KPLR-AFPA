@@ -2,7 +2,7 @@
 
 <!-- NOS METIERS -->
 
-<section id="whatwedo" class="tm-section-pad-top" style="margin-top:-570px">
+<section id="whatwedo" class="tm-section-pad-top">
 
 
 	<div class="container" style="width:80%">
@@ -22,8 +22,8 @@
 						clients dans la transformation de l'exploitation des
 						donn&eacute;es dont elles disposent
 					</p>
-					<p>par l'usage d'outils tels que le big data,l'Intelligence
-						Artificielle et technologies annexes
+					<p>par l'usage d'outils tels que le big data, l'Intelligence
+						Artificielle et technologies annexes.
 					</p>
 					<p>Notre approche op&eacute;rationnelle en mati&eacute;re de
 						Cloud est la suivante :

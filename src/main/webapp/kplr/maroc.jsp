@@ -1,7 +1,7 @@
 <c:import url="header.jsp"></c:import>
 
 <!-- PORTAIL MAROC -->
-<section id="gallery" class="tm-section-pad-top" style="margin-top: -600px">
+<section id="gallery" class="tm-section-pad-top">
 	<div class="container tm-container-gallery">
 		<div class="row">
 			<div class="text-center col-12">
@@ -20,7 +20,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i>Nos bureaux <span>à Casablanca</span></i>
+										<i>Nos bureaux <span>ï¿½ Casablanca</span></i>
 									</h2>
 								</figcaption>
 							</figure>
@@ -30,7 +30,7 @@
 									class="img-fluid">
 								<figcaption>
 									<h2>
-										<i>Seconde ville <span>économique</span></i>
+										<i>Seconde ville <span>ï¿½conomique</span></i>
 									</h2>
 								</figcaption>
 							</figure>

@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,22 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.AdminDao;
-import dao.ChatDao;
-import dao.MessageDao;
 
+import dao.MessageDao;
+import mailVerification.MailVerif;
+
+import model.Message;
 
 /**
- * Servlet implementation class loginAdmin
+ * Servlet implementation class ajoutFormationAdmin
  */
-@WebServlet("/admin/loginAdmin")
-public class loginAdmin extends HttpServlet {
+@WebServlet("/admin/messageAdmin")
+public class messageAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginAdmin() {
+    public messageAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,37 +35,30 @@ public class loginAdmin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MessageDao mDao=new MessageDao();
+		if(request.getParameter("messageId") != null) {
+			int messageId=Integer.parseInt(request.getParameter("messageId"));
+			mDao.delete(messageId);
+		}
 		
-		request.getRequestDispatcher("loginAdmin.jsp").forward(request, response);
+		List<Message> messages=mDao.read();
+		mDao.dejaVue();
+		request.setAttribute("messages", messages);
+		HttpSession session = request.getSession();
+		session.setAttribute("countMessageUnRead", mDao.countMessageUnRead());
+		
+		request.getRequestDispatcher("/admin/messageAdmin.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-
-		AdminDao ad = new AdminDao();
-
-		if (ad.login(email, password) != null) {
-
-			HttpSession session = request.getSession();
-
-			session.setAttribute("admin", ad.login(email, password));
-			
-			ChatDao cDao=new ChatDao();
-			session.setAttribute("totalUnReadChat", cDao.countTotalUnRead());
-			
-			MessageDao mDao=new MessageDao();
-			session.setAttribute("countMessageUnRead", mDao.countMessageUnRead());
-			
-
-			response.sendRedirect("formationsAdmin");
-		} else {
-			doGet(request, response);
-		}
-	
+		 
+		String email=request.getParameter("email");
+		String message=request.getParameter("message");
+		MailVerif.sendMail(email,message);
+		doGet(request,response);
 	}
 
 }

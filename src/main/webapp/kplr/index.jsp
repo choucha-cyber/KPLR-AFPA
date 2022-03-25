@@ -10,7 +10,7 @@
 	<p>KPLR est un cabinet de conseil pr&eacute;sent &agrave; Paris,
 		Marseille et Casablanca.</p>
 	<p>Notre moteur : Une innovation est un processus de
-		cr&eacute;ation au terme du quel un nouveau march&eacute; apparait, ou
+		cr&eacute;ation au terme duquel un nouveau march&eacute; apparait, ou
 		p&eacute;rennise, par des effets vertueux significatifs, un
 		march&eacute; existant.</p>
 	<p>KPLR d&eacute;veloppe plusieurs strat&eacute;gies pour etre
@@ -26,7 +26,7 @@
 						</a>
 						</c:if>
 						<c:if test="${empty client}">
-						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/index#loginUser"> <i
+						<a rel="nofollow" href="<%=request.getContextPath()%>/kplr/inscriptionUser"> <i
 							class="far fa-2x fa-comment mr-4"></i>
 						</a>
 						</c:if>
@@ -35,4 +35,11 @@
 
 </section>
 
-<c:import url="footer.jsp"></c:import>
+
+		<footer class="text-center small tm-footer">
+			<p class="mb-0">
+				Copyright &copy; 2022 KPLR . <a rel="nofollow"
+					href="#" title="HTML templates">Designed
+					by Shabina@Aisha</a>
+			</p>
+		</footer>

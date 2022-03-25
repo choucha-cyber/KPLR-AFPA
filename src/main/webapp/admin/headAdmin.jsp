@@ -9,6 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Admin page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+
 
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
@@ -24,6 +27,7 @@
 
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet" href="css/tooplate.css">
+
 </head>
 <body id="reportsPage">
 	<div class="" id="home">
@@ -57,11 +61,29 @@
 
 								<li class="nav-item"><a class="nav-link"
 									href="compteAdmin">Comptes</a></li>
-									<li class="nav-item"><a class="nav-link"
-									href="chatAdmin">Chat</a>
-									 <span class="badge badge-danger float-right">1</span>
-                </li>
-								
+									
+								<c:if test="${not empty admin }">
+								<li class="nav-item">
+								<a class="nav-link" href="chatAdmin">Chat</a>
+								<c:if test="${totalUnReadChat !=0 }">
+									 <span class="badge badge-danger float-right">${totalUnReadChat}</span>
+               					
+               					</c:if> </li>
+               					<li class="nav-item">
+								<a class="nav-link" href="messageAdmin">Message</a>
+								<c:if test="${countMessageUnRead !=0 }">
+									 <span class="badge badge-danger float-right">${countMessageUnRead}</span>
+               					
+               					</c:if> </li>
+               					 </c:if>
+               					 <c:if test="${empty admin }">
+								<li class="nav-item">
+								<a class="nav-link" href="loginAdmin">Chat</a>
+               					 </li>
+               					 <li class="nav-item">
+								<a class="nav-link" href="loginAdmin">Message</a>
+               					 </li>
+               					 </c:if>
 								<li class="nav-item"><a class="nav-link d-flex" href="logoutAdmin">
 									 <i class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
 								</a></li>

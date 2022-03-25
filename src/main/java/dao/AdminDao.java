@@ -12,7 +12,6 @@ import java.util.Base64;
 import java.util.List;
 
 import model.Admin;
-import model.Client;
 
 public class AdminDao {
 	Connection connect = Connect.getConnection();
@@ -29,8 +28,6 @@ public class AdminDao {
 
 			req.executeUpdate();
 
-			System.out.println(object.getNom() + " " + object.getEmail() + "  " + object.getPassword()
-					+ " a été bien ajouté en base");
 			msg = true;
 
 		} catch (Exception e) {
@@ -39,7 +36,7 @@ public class AdminDao {
 		}
 		return msg;
 	}
-	
+
 	public List<Admin> read() {
 		List<Admin> listeAdmin = new ArrayList<>();
 
@@ -114,7 +111,8 @@ public class AdminDao {
 			if (rs.next()) {
 				// msg = true;
 
-				return new Admin(rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("password"));
+				return new Admin(rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+						rs.getString("password"));
 			}
 
 		} catch (SQLException e) {

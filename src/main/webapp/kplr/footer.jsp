@@ -1,13 +1,13 @@
-
-		<footer class="text-center small tm-footer">
+	
+		<footer class="text-center small">
 			<p class="mb-0">
 				Copyright &copy; 2022 KPLR . <a rel="nofollow"
-					href="https://www.tooplate.com" title="HTML templates">Designed
+					href="#" title="HTML templates">Designed
 					by Shabina@Aisha</a>
 			</p>
 		</footer>
 
-	</section>
+		
 
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="slick/slick.min.js"></script>
@@ -15,6 +15,7 @@
 	<script src="js/easing.min.js"></script>
 	<script src="js/jquery.singlePageNav.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
 	<!-- MDB -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
 	<script>
@@ -195,13 +196,5 @@
 			});
 		});
 	</script>
-</body>
-</html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
 </body>
 </html>

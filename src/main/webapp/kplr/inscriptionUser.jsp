@@ -1,28 +1,31 @@
 <c:import url="header.jsp"></c:import>
 
 <div class="container">
+	<br>
+	<br>
 
 	<!-- INSCRIPTION USER -->
 	<section id="inscription"
-		style="margin-top: -600px; margin-left: 7rem; width: 80%;">
+		style="width: 70%; height: 55%; margin: auto;">
 
 
 		<c:if test="${empty client }">
 			<div class="row">
 				<div class="col col-md-6">
-					<div id="inscriptionUser" style="width: 80%; margin: auto;">
+					<div id="inscriptionUser">
+					
 						<h4 class="text-center text-light">INSCRIPTION</h4>
+						
 						<c:if test="${not empty exist }">
-							<div class="alert alert-danger" role="alert">Veuillez
-								essayer un nouvel email</div>
+							<div class="alert alert-danger" role="alert">Cet email existe d&eacute;ja</div>
 						</c:if>
 						<form action="<%=request.getContextPath()%>/kplr/inscriptionUser"
-							method="post" enctype="multipart/form-data"
-							onsubmit="return verif();">
+							method="post" enctype="multipart/form-data">
 							<div class="mb-3">
 								<label for="nom" class="form-label text-light">Nom</label> <input
 									type="text" required class="form-control" id="nom" name="nom"
 									aria-describedby="emailHelp">
+									<div id="errorNom"></div>
 							</div>
 							<div class="mb-3">
 								<label for="prenom" class="form-label text-light">Prenom</label>
@@ -30,16 +33,17 @@
 									name="prenom" aria-describedby="emailHelp">
 							</div>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label text-light">Mobile</label>
+								<label for="mobile" class="form-label text-light">Mobile</label>
 								<input type="text" required class="form-control"
-									id="exampleInputEmail1" name="mobile"
+									id="mobile" name="mobile"
 									aria-describedby="emailHelp">
+									<div id="errorTel"></div>
 							</div>
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label text-light">Email</label>
 								<input type="email" required class="form-control"
-									id="exampleInputEmail1" name="email"
-									aria-describedby="emailHelp">
+									id="email" name="email" aria-describedby="emailHelp">
+									<div id="errorEmail"></div>
 								<div id="emailHelp" class="form-text">We'll never share
 									your email with anyone else.</div>
 							</div>
@@ -48,7 +52,7 @@
 									de passe</label> <input type="password" required class="form-control"
 									name="password" id="exampleInputPassword1">
 							</div>
-							<div class="mb-3" style="display:inline;">
+							<div class="mb-3" style="display: inline;">
 								<label for="exampleInputPassword1" class="form-label text-light">Photo
 									de profil</label> <img id="selectedImage" src='img/men.jpg' width="20%"
 									onclick="document.getElementById('getFile').click(); return false;">
@@ -61,6 +65,7 @@
 						</form>
 					</div>
 				</div>
+				
 
 				<!-- LOGIN USER -->
 
@@ -91,7 +96,10 @@
 						</form>
 					</div>
 				</div>
+			</div>
 		</c:if>
+
+
 	</section>
 </div>
 

@@ -2,7 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+
 
 import model.Message;
 
@@ -34,7 +38,28 @@ public class MessageDao implements Idao<Message>{
 
 	@Override
 	public List<Message> read() {
-		// TODO Auto-generated method stub
+		List<Message> listeMessage = new ArrayList<>();
+
+		// CRUD - Read
+		ResultSet rs = null;
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("SELECT * FROM message ");
+			
+			rs = sql2.executeQuery();
+
+			while (rs.next()) {
+
+				Message message = new Message(rs.getInt("id_message"),rs.getString("nom"), rs.getString("email"), rs.getString("message"));
+
+				listeMessage.add(message);
+				
+			}
+			return listeMessage;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
@@ -49,6 +74,19 @@ public class MessageDao implements Idao<Message>{
 		// TODO Auto-generated method stub
 		
 	}
+	public void delete(int id) {
+		PreparedStatement ps;
+		try {
+			ps = connect.prepareStatement("DELETE FROM message WHERE id_message=?");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 
 	@Override
 	public Message findById(int id) {
@@ -60,6 +98,41 @@ public class MessageDao implements Idao<Message>{
 	public Message findByName(String nom) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public int countMessageUnRead() {
+		ResultSet rs = null;
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM message WHERE vueAdmin=? ");			
+			sql2.setInt(1, 0);
+			rs = sql2.executeQuery();
+
+			if (rs.next()) {
+				return rs.getInt("count");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;		
+		
+	}
+
+	
+
+	public void dejaVue() {
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("UPDATE message SET vueAdmin=? ");			
+			sql2.setInt(1, 1);
+			sql2.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

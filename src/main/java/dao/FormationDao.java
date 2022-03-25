@@ -86,7 +86,7 @@ public class FormationDao implements Idao<Formation> {
 	public Formation findById(int id) {
 		Formation formation = null;
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM Formation WHERE id_formation = ?");
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM formation WHERE id_formation = ?");
 
 			req.setInt(1, id);
 

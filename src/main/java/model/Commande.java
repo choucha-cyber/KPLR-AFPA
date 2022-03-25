@@ -3,29 +3,29 @@ package model;
 public class Commande {
 	
 	private int id_commande;
-	private int montant;
-	private String nom_client;
-	//private Client client;
-	private String email;
+	private Double montant;
+	private int id_client;
+
 	
 	public Commande() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Commande(int id_commande, int montant, String nom_client, String email) {
+
+	public Commande(int id_commande, Double montant, int id_client) {
 		super();
 		this.id_commande = id_commande;
 		this.montant = montant;
-		this.nom_client = nom_client;
-		this.email = email;
+		this.id_client = id_client;
 	}
+		
 
-	public Commande(int montant, String nom_client, String email) {
+	public Commande(Double montant, int id_client) {
 		super();
 		this.montant = montant;
-		this.nom_client = nom_client;
-		this.email = email;
+		this.id_client = id_client;
+
 	}
 
 	public int getId_commande() {
@@ -36,32 +36,24 @@ public class Commande {
 		this.id_commande = id_commande;
 	}
 
-	public int getMontant() {
+
+	public Double getMontant() {
 		return montant;
 	}
 
-	public void setMontant(int montant) {
+
+	public void setMontant(Double montant) {
 		this.montant = montant;
 	}
 
-	public String getNom_client() {
-		return nom_client;
+
+	public int getId_client() {
+		return id_client;
 	}
 
-	public void setNom_client(String nom_client) {
-		this.nom_client = nom_client;
+	public void setId_client(int id_client) {
+		this.id_client = id_client;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	
-	
-	
 
 }

@@ -7,21 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DetailsCommande;
-
 /**
- * Servlet implementation class detailsCommande
+ * Servlet implementation class paiement
  */
-@WebServlet("/kplr/detailsCommande")
-public class detailsCommande extends HttpServlet {
+@WebServlet("/kplr/paiement")
+public class paiement extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	DetailsCommande details = new DetailsCommande();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public detailsCommande() {
+    public paiement() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +26,7 @@ public class detailsCommande extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getRequestDispatcher("/kplr/detailsCommande.jsp").forward(request, response);
+		request.getRequestDispatcher("/kplr/paiement.jsp").forward(request, response);
 	}
 
 	/**

@@ -1,67 +1,63 @@
 <c:import url="header.jsp"></c:import>
 
-
-<div class="container" style="margin-top: -500px; width:80%;">
-<section id="commande">
-	<div class="row tm-content-row tm-mt-big">
-		<div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
-			<div class="bg-white tm-block h-100">
-				<div class="row">
-					<div class="col-md-8 col-sm-12">
-						<h2 class="tm-block-title d-inline-block">Commande</h2>
-
-					</div>
-					<div class="col-md-4 col-sm-12 text-right">
-						<a href="commande.jsp" class="btn btn-small btn-primary">retournez au catalogue</a>
-					</div>
-				</div>
-				<div class="table-responsive">
-					<table
-						class="table table-hover table-striped tm-table-striped-even mt-3">
-						<thead>
-							<tr class="tm-bg-gray">
-
-								<th scope="col" id="Nom"><c:out value="${formation.titre}"></c:out></th>
-								<th scope="col" id="prix" class="text-center"><c:out
-										value="${produit.prix }"></c:out></th>
-								<th scope="col">&nbsp;</th>
-							</tr>
-						</thead>
-
-						<tbody>
+<!-- AFFICHER DETAILS FORMATION SELECTIONNEE -->
 
 
-							<tr>
-								<td id="titreFormation" class="tm-product-name"></td>
-								<td id="tarifFormation" class="text-center"></td>
-								<td><i class="fas fa-trash-alt tm-trash-icon"></i></td>
-							</tr>
+<section id="commande" style="width: 50%; margin: auto;">
+	<div class="container">
+		<br> <br>
+		<div class="row">
 
+			<h2>
+				<c:out value="${formation.titre} (code : ${formation.code})"></c:out>
+			</h2>
+			<br> <br>
+			<h4>
+				<c:out value="durée : ${formation.duree} jours"></c:out>
+			</h4>
 
+		</div>
+		<div class="table-responsive">
+			<table>
 
-							<tr>
-								<td id="totalCommande" class="tm-product-name"
-									style="font-weight: bolder">TOTAL COMMANDE</td>
-								<td class="text-center">0</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<thead>
+					<th>Compétences visées</th>
+					<th>Dates</th>
+					<th>Tarif</th>
 
-				<div class="tm-table-mt tm-table-actions-row">
-					<div class="tm-table-actions-col-left">
-						<button class="btn btn-danger">
-							<a href="paiement.jsp">COMMANDER</a>
-						</button>
-					</div>
+				</thead>
+				<tbody>
 
-				</div>
+					<td scope="col"><c:out value="${formation.contenu}"></c:out></td>
+					<td scope="col"><c:out value="${formation.dateDebut}">au </c:out>
+						<c:out value="${formation.dateFin}"></c:out></td>
+					<td scope="col" class="text-center"><c:out
+							value="${formation.tarif }"></c:out></td>
+					<th scope="col">&nbsp;</th>
+
+				</tbody>
+			</table>
+		</div>
+		<br> <br>
+
+		<div class="tm-table-mt tm-table-actions-row">
+			<div class="tm-table-actions-col-left">
+
+				<form method="post"
+					action="<%=request.getContextPath()%>/kplr/commande?tarif=<c:out value='${formation.tarif }'/>&clientId=<c:out value='${client.id_client }'/>">
+					<button>
+						Commander
+					</button>
+				</form>
 			</div>
+
 		</div>
 	</div>
-	
-	</section>
-</div>
+
+</section>
+<br>
+<br>
+
 
 <c:import url="footer.jsp"></c:import>
 

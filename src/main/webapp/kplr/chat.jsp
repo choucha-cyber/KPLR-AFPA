@@ -1,7 +1,7 @@
 <c:import url="header.jsp"></c:import>
 
 
-<div class="container mt-5  overflow-auto" id="chat" style="height:70%;" >
+<div class="container overflow-auto tm-section-pad-top tm-parallax-2" id="chat">
 
   <!-- Grid row -->
   <div class="row d-flex flex-row-reverse mx-auto justify-content-center" >

@@ -182,6 +182,44 @@ public class ChatDao implements Idao<Chat> {
 		
 		
 	}
+
+
+	public int countTotalUnRead() {
+		ResultSet rs = null;
+		PreparedStatement sql2;
+		try {
+			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM chat WHERE vueAdmin=? AND envoyeePar!=?");			
+			sql2.setInt(1, 0);
+			sql2.setInt(2, 0);
+			
+			rs = sql2.executeQuery();
+
+			if (rs.next()) {
+				return rs.getInt("count");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;		
+		
+	}
+
+
+	public void deleteByClient(int envoyeePar) {
+		PreparedStatement ps;
+		try {
+			ps = connect.prepareStatement("DELETE FROM chat WHERE envoyeePar=? OR recuPar=?");
+			ps.setInt(1, envoyeePar);
+			ps.setInt(2, envoyeePar);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 
 }
