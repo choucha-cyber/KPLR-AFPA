@@ -36,8 +36,16 @@ public class compteAdmin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("admins", adminDao.read());
-		request.getRequestDispatcher("compteAdmin.jsp").forward(request, response);
+		
+		// retourne la liste des admins
+
+				if(request.getParameter("adminId")!=null)
+					{
+					adminDao.delete(Integer.parseInt(request.getParameter("adminId")));
+						}
+			request.setAttribute("admins", adminDao.read());
+			request.getRequestDispatcher("/admin/compteAdmin.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -47,6 +55,8 @@ public class compteAdmin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+			//AJOUTER NOVEAU COMPTE ADMIN A LA BDD
+		
 		// Recup saisies
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
@@ -58,36 +68,32 @@ public class compteAdmin extends HttpServlet {
 		// instancie un nouvel admin
 		Admin nouvelAdmin = new Admin(nom, prenom, email, password);
 
-		AdminDao adminDao = new AdminDao();
-		adminDao.create(nouvelAdmin);
+		
+		//adminDao.create(nouvelAdmin);
 
 		System.out.println(nouvelAdmin);
 
-		doGet(request, response);
+		//doGet(request, response);
 
-		/*
-		 * boolean exist = false;
-		 * 
-		 * 
-		 * if (adminDao.mailExist(email)) {
-		 * 
-		 * adminDao.create(nouvelAdmin);
-		 * 
-		 * 
-		 * exist = false; request.setAttribute("exist", exist);
-		 * 
-		 */
-		// request.getRequestDispatcher("compteAdmin.jsp").forward(request, response);
-		/* response.sendRedirect("indexAdmin"); */
-		// doGet(request, response);
+		
+		 boolean exist = false;
+		  
+		 if (adminDao.mailExist(email)) {
+		 
+			 adminDao.create(nouvelAdmin);
+		 
+		  exist = false; 
+		  request.setAttribute("exist", exist);
+		 
+		  request.getRequestDispatcher("compteAdmin.jsp").forward(request, response);
+		  response.sendRedirect("compteAdmin"); 
+		 doGet(request, response);
 
-		/*
-		 * } else { exist = true; request.setAttribute("exist", exist);
-		 * response.sendRedirect("indexAdmin");
-		 * 
-		 * 
-		 * }
-		 */
+		
+		  } else { exist = true; request.setAttribute("exist", exist);
+		  response.sendRedirect("compteAdmin");
+		  }
+		 
 
 	}
 

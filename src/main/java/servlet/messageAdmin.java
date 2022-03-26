@@ -1,7 +1,11 @@
 package servlet;
 
 import java.io.IOException;
-
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,10 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+import dao.ChatDao;
+import dao.ClientDao;
+import dao.FormationDao;
 import dao.MessageDao;
 import mailVerification.MailVerif;
-
+import model.Chat;
+import model.Client;
+import model.Formation;
 import model.Message;
 
 /**
@@ -54,10 +62,12 @@ public class messageAdmin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+		int messageIdRepondu=Integer.parseInt(request.getParameter("messageIdRepondu"));
 		String email=request.getParameter("email");
 		String message=request.getParameter("message");
 		MailVerif.sendMail(email,message);
+		MessageDao mDao=new MessageDao();
+		mDao.repondu(messageIdRepondu);
 		doGet(request,response);
 	}
 

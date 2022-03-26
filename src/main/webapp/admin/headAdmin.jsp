@@ -8,9 +8,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Admin page</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+<title>Site admin</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
 
 
 <link rel="stylesheet"
@@ -29,67 +31,57 @@
 <link rel="stylesheet" href="css/tooplate.css">
 
 </head>
+
 <body id="reportsPage">
 	<div class="" id="home">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<nav class="navbar navbar-expand-xl navbar-light bg-light"> <a
-						class="navbar-brand" href="kplr/index.jsp"> <i
-						class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
-						<h1 class="tm-site-title mb-0">
-							<a href="../kplr/index" style="color: grey; font-size: 12px">Allez
-								sur le site web KPLR</a>
-						</h1>
-
-
-						<button class="navbar-toggler ml-auto mr-0" type="button"
-							data-toggle="collapse" data-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+					<nav class="navbar navbar-expand-xl navbar-light bg-light"> 
+					
+						<a class="navbar-brand" href="../kplr/index"> 
+						<i class="fas fa-3x fa-tachometer-alt tm-site-icon">kplr
+							<p style="font-size: 0.5rem;">allez sur le site client</p></i></a>
 
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 							<ul class="navbar-nav mx-auto">
-								<li class="nav-item"><a class="nav-link active"
-									href="loginAdmin">Admin <span class="sr-only">(current)</span>
-								</a></li>
-								
-								<li class="nav-item"><a class="nav-link"
-									href="formationsAdmin">Catalogue des formations</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="loginAdmin">Login</a></li>
 
 								<li class="nav-item"><a class="nav-link"
-									href="compteAdmin">Comptes</a></li>
-									
+									href="formationsAdmin">Catalogue</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="users">clients</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="compteAdmin">admin</a></li>
+
 								<c:if test="${not empty admin }">
-								<li class="nav-item">
-								<a class="nav-link" href="chatAdmin">Chat</a>
-								<c:if test="${totalUnReadChat !=0 }">
-									 <span class="badge badge-danger float-right">${totalUnReadChat}</span>
-               					
-               					</c:if> </li>
-               					<li class="nav-item">
-								<a class="nav-link" href="messageAdmin">Message</a>
-								<c:if test="${countMessageUnRead !=0 }">
-									 <span class="badge badge-danger float-right">${countMessageUnRead}</span>
-               					
-               					</c:if> </li>
-               					 </c:if>
-               					 <c:if test="${empty admin }">
-								<li class="nav-item">
-								<a class="nav-link" href="loginAdmin">Chat</a>
-               					 </li>
-               					 <li class="nav-item">
-								<a class="nav-link" href="loginAdmin">Message</a>
-               					 </li>
-               					 </c:if>
-								<li class="nav-item"><a class="nav-link d-flex" href="logoutAdmin">
-									 <i class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
+									<li class="nav-item"><a class="nav-link" href="chatAdmin">Chat</a>
+										<c:if test="${totalUnReadChat !=0 }">
+											<span class="badge badge-danger float-right">${totalUnReadChat}</span>
+
+										</c:if></li>
+									<li class="nav-item"><a class="nav-link"
+										href="messageAdmin">Message</a> <c:if
+											test="${countMessageUnRead !=0 }">
+											<span class="badge badge-danger float-right">${countMessageUnRead}</span>
+
+										</c:if></li>
+								</c:if>
+								<c:if test="${empty admin }">
+									<li class="nav-item"><a class="nav-link" href="loginAdmin">Chat</a>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="loginAdmin">Message</a>
+									</li>
+								</c:if>
+								<li class="nav-item"><a class="nav-link d-flex"
+									href="logoutAdmin"> <i
+										class="far fa-user mr-2 tm-logout-icon"></i> <span>Déconnexion</span>
 								</a></li>
 							</ul>
-							<br>
-							<span>Bienvenu <c:out value="${admin.nom }"></c:out></span>
+							<br> <span><c:out value="Bienvenu ${admin.prenom }"></c:out></span>
+
 						</div></nav>
 
 				</div>

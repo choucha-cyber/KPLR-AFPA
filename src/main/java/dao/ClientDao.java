@@ -57,23 +57,22 @@ public class ClientDao implements Idao<Client> {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT * FROM Client");
+			sql2 = connect.prepareStatement("SELECT * FROM client");
 
 			rs = sql2.executeQuery();
 
 			while (rs.next()) {
-				System.out.println(rs.getInt("id"));
-
-				Client client = new Client(rs.getInt("id_client"),rs.getString("nom"), rs.getString("prenom"), rs.getString("mobile"),rs.getString("email"),
+				Client client = new Client(rs.getInt("id_client"),rs.getString("nom"), rs.getString("prenom"), rs.getString("tel"),rs.getString("email"),
 						rs.getString("image"),rs.getTimestamp("dateInscription"));
 
 				listeClient.add(client);
 			}
+			return listeClient;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return listeClient;
+		return null;
 	}
 
 	@Override
@@ -84,17 +83,21 @@ public class ClientDao implements Idao<Client> {
 
 	@Override
 	public void delete(Client object) {
+		
+
+	}
+	
+	public void delete(int id) {
+		PreparedStatement ps;
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM Client WHERE id_client=?");
-
-			req.setObject(1, object.getId_client());
-			// System.out.println(req);
-			req.executeUpdate();
+			ps=connect.prepareStatement("DELETE FROM client WHERE id_client=?");
+			ps.setInt(1, id);
+			ps.executeUpdate();
 		} catch (SQLException e) {
-
+			
 			e.printStackTrace();
 		}
-
+		
 	}
 
 	@Override

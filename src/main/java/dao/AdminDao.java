@@ -12,6 +12,7 @@ import java.util.Base64;
 import java.util.List;
 
 import model.Admin;
+import model.Consultant;
 
 public class AdminDao {
 	Connection connect = Connect.getConnection();
@@ -44,18 +45,21 @@ public class AdminDao {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT * FROM Admin");
+			sql2 = connect.prepareStatement("SELECT * FROM admin");
 
 			rs = sql2.executeQuery();
 
 			while (rs.next()) {
-				System.out.println(rs.getInt("id"));
+				System.out.println(rs.getInt("id_admin"));
 
 				Admin admin = new Admin(rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
 						rs.getString("password"));
 
 				listeAdmin.add(admin);
 			}
+			
+			return listeAdmin;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +70,7 @@ public class AdminDao {
 	public boolean mailExist(String email) {
 		Boolean msg = false;
 		try {
-			PreparedStatement sql = connect.prepareStatement("SELECT * FROM Admin WHERE email = ?");
+			PreparedStatement sql = connect.prepareStatement("SELECT * FROM admin WHERE email = ?");
 
 			sql.setString(1, email);
 
@@ -98,7 +102,7 @@ public class AdminDao {
 	public Admin login(String mail, String mdp) {
 		// boolean msg = false;
 		try {
-			PreparedStatement sql = connect.prepareStatement("SELECT * FROM Admin WHERE email=? AND password=?");
+			PreparedStatement sql = connect.prepareStatement("SELECT * FROM admin WHERE email=? AND password=?");
 			sql.setString(1, mail);
 			try {
 				sql.setString(2, encode(mdp));
@@ -119,6 +123,18 @@ public class AdminDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void delete(int id) {
+		PreparedStatement ps;
+		try {
+			ps=connect.prepareStatement("DELETE FROM admin WHERE id_admin=?");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

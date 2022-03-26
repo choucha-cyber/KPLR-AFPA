@@ -3,6 +3,25 @@
 <c:import url="headAdmin.jsp"></c:import>
 
 <c:out value="Bonjour ${admin.prenom } ${admin.nom }" />
+<c:if test="${ !empty sessionScope.nom}">
+	<p>${ sessionScope.prenom }est bien connect&eacute;!</p>
+</c:if>
+
+<c:out value="Bonjour ${admin.prenom } ${admin.nom }" />
+
+
+
+<c:if test="${exist == 'false' }">
+	<div class="alert alert-success" role="alert">F&eacute;licitation,
+		compte cr&eacute;e</div>
+
+</c:if>
+
+<c:if test="${exist }">
+	<div class="alert alert-danger" role="alert">Oups, le mail existe
+		deja !</div>
+
+</c:if>
 
 
 <div class="container">
@@ -38,9 +57,9 @@
 									class="btn btn-primary d-inline-block mx-auto">Login</button>
 							</div>
 							<div class="input-group mt-3">
-								<p>
-									<em>page login</em>
-								</p>
+								<a href="compteAdmin">
+									<em>inscrivez-vous</em>
+								</a>
 							</div>
 						</form>
 					</div>

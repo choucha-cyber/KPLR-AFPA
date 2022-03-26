@@ -18,10 +18,11 @@ public class ChatDao implements Idao<Chat> {
 	public boolean create(Chat object) {
 		boolean msg = false;
 		try {
-			PreparedStatement req = connect.prepareStatement("INSERT INTO chat (envoyeePar, recuPar, text, dateEnvoye) VALUES (?,?,?,now())");
+			PreparedStatement req = connect
+					.prepareStatement("INSERT INTO chat (envoyeePar, recuPar, text, dateEnvoye) VALUES (?,?,?,now())");
 			req.setInt(1, object.getEnvoyeePar());
 			req.setInt(2, object.getRecuPar());
-			
+
 			req.setString(3, object.getText());
 			req.executeUpdate();
 			return true;
@@ -32,7 +33,6 @@ public class ChatDao implements Idao<Chat> {
 		return msg;
 	}
 
-	
 	public List<Chat> read(int clientId) {
 		List<Chat> listeChat = new ArrayList<>();
 
@@ -47,30 +47,30 @@ public class ChatDao implements Idao<Chat> {
 
 			while (rs.next()) {
 
-				Chat chat = new Chat(rs.getInt("id_chat"),rs.getInt("envoyeePar"), rs.getInt("recuPar"), rs.getString("text"),rs.getInt("vue"),
-						rs.getInt("visible"),rs.getTimestamp("dateEnvoye"));
+				Chat chat = new Chat(rs.getInt("id_chat"), rs.getInt("envoyeePar"), rs.getInt("recuPar"),
+						rs.getString("text"), rs.getInt("vue"), rs.getInt("visible"), rs.getTimestamp("dateEnvoye"));
 
 				listeChat.add(chat);
-				
+
 			}
 			return listeChat;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
 
 	@Override
 	public void update(Chat object) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(Chat object) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -85,7 +85,6 @@ public class ChatDao implements Idao<Chat> {
 		return null;
 	}
 
-
 	@Override
 	public List<Chat> read() {
 		List<Chat> listeChat = new ArrayList<>();
@@ -94,18 +93,23 @@ public class ChatDao implements Idao<Chat> {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT * FROM chat INNER JOIN client ON chat.envoyeePar = client. id_client WHERE chat.envoyeePar != 0  GROUP BY envoyeePar ORDER BY dateEnvoye DESC;");			
+			System.out.println("test1");
+			sql2 = connect.prepareStatement(
+					"SELECT * FROM chat INNER JOIN client ON chat.envoyeePar = client.id_client WHERE chat.envoyeePar != 0  GROUP BY envoyeePar ORDER BY dateEnvoye DESC;");
 			rs = sql2.executeQuery();
 
+			System.out.println("test");
+
 			while (rs.next()) {
-				Client client = new Client(rs.getInt("id_client"),rs.getString("nom"), rs.getString("prenom"), rs.getString("tel"),rs.getString("email"),
-						rs.getString("image"),rs.getTimestamp("dateInscription"));
-				Chat chat = new Chat(rs.getInt("id_chat"),rs.getInt("envoyeePar"), rs.getInt("recuPar"), rs.getString("text"),rs.getInt("vue"),
-						rs.getInt("visible"),rs.getTimestamp("dateEnvoye"),client);
-				
+				Client client = new Client(rs.getInt("id_client"), rs.getString("nom"), rs.getString("prenom"),
+						rs.getString("tel"), rs.getString("email"), rs.getString("image"),
+						rs.getTimestamp("dateInscription"));
+				Chat chat = new Chat(rs.getInt("id_chat"), rs.getInt("envoyeePar"), rs.getInt("recuPar"),
+						rs.getString("text"), rs.getInt("vue"), rs.getInt("visible"), rs.getTimestamp("dateEnvoye"),
+						client);
 
 				listeChat.add(chat);
-				
+
 			}
 			System.out.println("this is dao liste");
 			System.out.println(listeChat);
@@ -113,33 +117,32 @@ public class ChatDao implements Idao<Chat> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
-
 
 	public int countUnRead(int id) {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM chat WHERE envoyeePar=? AND vueAdmin=0");			
+			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM chat WHERE envoyeePar=? AND vueAdmin=0");
 			sql2.setInt(1, id);
 			rs = sql2.executeQuery();
 
 			if (rs.next()) {
-				
-				System.out.println("this is count in dao"+ rs.getInt("count"));
+
+				System.out.println("this is count in dao" + rs.getInt("count"));
 				return rs.getInt("count");
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return 0;
-		
+
 	}
-	
+
 	public List<Chat> readSingleChat(int clientId) {
 		List<Chat> listeChat = new ArrayList<>();
 
@@ -154,58 +157,54 @@ public class ChatDao implements Idao<Chat> {
 
 			while (rs.next()) {
 
-				Chat chat = new Chat(rs.getInt("id_chat"),rs.getInt("envoyeePar"), rs.getInt("recuPar"), rs.getString("text"),rs.getInt("vue"),
-						rs.getInt("visible"),rs.getTimestamp("dateEnvoye"));
+				Chat chat = new Chat(rs.getInt("id_chat"), rs.getInt("envoyeePar"), rs.getInt("recuPar"),
+						rs.getString("text"), rs.getInt("vue"), rs.getInt("visible"), rs.getTimestamp("dateEnvoye"));
 
 				listeChat.add(chat);
-				
+
 			}
 			return listeChat;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
-
 
 	public void dejaVue(int id) {
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("UPDATE chat SET vueAdmin=1 WHERE envoyeePar=?");			
+			sql2 = connect.prepareStatement("UPDATE chat SET vueAdmin=1 WHERE envoyeePar=?");
 			sql2.setInt(1, id);
 			sql2.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
-	}
 
+	}
 
 	public int countTotalUnRead() {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM chat WHERE vueAdmin=? AND envoyeePar!=?");			
+			sql2 = connect.prepareStatement("SELECT count(*) AS count FROM chat WHERE vueAdmin=? AND envoyeePar!=?");
 			sql2.setInt(1, 0);
 			sql2.setInt(2, 0);
-			
+
 			rs = sql2.executeQuery();
 
 			if (rs.next()) {
 				return rs.getInt("count");
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		return 0;		
-		
-	}
 
+		return 0;
+
+	}
 
 	public void deleteByClient(int envoyeePar) {
 		PreparedStatement ps;
@@ -218,8 +217,7 @@ public class ChatDao implements Idao<Chat> {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
 
 }

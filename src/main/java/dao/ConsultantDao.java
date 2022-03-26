@@ -44,7 +44,7 @@ public class ConsultantDao implements Idao<Consultant> {
 		ResultSet rs = null;
 		PreparedStatement sql2;
 		try {
-			sql2 = connect.prepareStatement("SELECT * FROM Consultant");
+			sql2 = connect.prepareStatement("SELECT * FROM consultant");
 
 			rs = sql2.executeQuery();
 
@@ -74,7 +74,7 @@ public class ConsultantDao implements Idao<Consultant> {
 	@Override
 	public void delete(Consultant object) {
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM Consultant WHERE id_consultant=?");
+			PreparedStatement req = connect.prepareStatement("DELETE FROM consultant WHERE id_consultant=?");
 
 			req.setObject(1, object.getId_consultant());
 			// System.out.println(req);
@@ -90,7 +90,7 @@ public class ConsultantDao implements Idao<Consultant> {
 	public Consultant findById(int id) {
 		Consultant consultant = null;
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM Consultant WHERE id_consultant = ?");
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM consultant WHERE id_consultant = ?");
 
 			req.setInt(1, id);
 
@@ -117,7 +117,7 @@ public class ConsultantDao implements Idao<Consultant> {
 	public Consultant findByName(String nom_consultant) {
 		Consultant consultant = null;
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM Consultant WHERE nom = ?");
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM consultant WHERE nom = ?");
 
 			req.setString(1, nom_consultant);
 

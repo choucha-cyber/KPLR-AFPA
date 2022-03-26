@@ -9,22 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ClientDao;
 import dao.FormationDao;
 import model.Formation;
 
 /**
  * Servlet implementation class ajoutFormationAdmin
  */
-@WebServlet("/admin/formationsAdmin")
-public class formationAdmin extends HttpServlet {
+@WebServlet("/admin/users")
+public class users extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	FormationDao formationDao = new FormationDao();
+	ClientDao clientDao = new ClientDao();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public formationAdmin() {
+    public users() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,12 +34,12 @@ public class formationAdmin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("formationId")!=null)
+		if(request.getParameter("clientId")!=null)
 		{
-		formationDao.delete(Integer.parseInt(request.getParameter("formationId")));
+			clientDao.delete(Integer.parseInt(request.getParameter("clientId")));
 		}
-		request.setAttribute("formations", formationDao.read());
-		request.getRequestDispatcher("/admin/formationsAdmin.jsp").forward(request, response);
+		request.setAttribute("users", clientDao.read());
+		request.getRequestDispatcher("/admin/users.jsp").forward(request, response);
 	}
 
 	/**

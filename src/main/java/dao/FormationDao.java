@@ -18,7 +18,7 @@ public class FormationDao implements Idao<Formation> {
 		boolean msg = false;
 		try {
 			PreparedStatement req = connect.prepareStatement(
-					"INSERT INTO formation (titre, code, duree, tarif, dateDebut, dateFin, contenu) VALUES (?,?,?,?,?,?,?)");
+					"INSERT INTO formation (titre, code, duree, tarif, dateDebut, dateFin, contenu,image) VALUES (?,?,?,?,?,?,?,?)");
 			req.setString(1, object.getTitre());
 			req.setString(2, object.getCode());
 			req.setInt(3, object.getDuree());
@@ -26,10 +26,9 @@ public class FormationDao implements Idao<Formation> {
 			req.setString(5, object.getDateDebut());
 			req.setString(6, object.getDateFin());
 			req.setString(7, object.getContenu());
+			req.setString(8, object.getImage());
 
 			req.executeUpdate();
-
-			System.out.println("formation ajouté à la base! ");
 			msg = true;
 
 		} catch (Exception e) {
@@ -58,7 +57,7 @@ public class FormationDao implements Idao<Formation> {
 
 				Formation formation = new Formation(rs.getInt("id_formation"), rs.getString("titre"),
 						rs.getString("code"), rs.getInt("duree"), rs.getInt("tarif"), rs.getString("dateDebut"),
-						rs.getString("dateFin"), rs.getString("contenu"));
+						rs.getString("dateFin"), rs.getString("contenu"), rs.getString("image"));
 
 				listeFormation.add(formation);
 			}
@@ -72,9 +71,43 @@ public class FormationDao implements Idao<Formation> {
 
 	@Override
 	public void update(Formation object) {
-		// TODO Auto-generated method stub
+		PreparedStatement req;
+		try {
+			req=connect.prepareStatement("UPDATE formation SET titre=?, code=?, duree=?, tarif=?, dateDebut=?, dateFin=?, contenu=?,image=? WHERE id_formation=?");
+			req.setString(1, object.getTitre());
+			req.setString(2, object.getCode());
+			req.setInt(3, object.getDuree());
+			req.setInt(4, object.getTarif());
+			req.setString(5, object.getDateDebut());
+			req.setString(6, object.getDateFin());
+			req.setString(7, object.getContenu());
+			req.setString(8, object.getImage());
+			req.setInt(9, object.getId_formation());
+			req.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
+	
+	public void updateImage(String image,int id_formation) {
+		PreparedStatement req;
+		try {
+			req=connect.prepareStatement("UPDATE formation SET image=? WHERE id_formation=?");
+			req.setString(1, image);
+			req.setInt(2, id_formation);
+			
+			req.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 
 	@Override
 	public void delete(Formation object) {
@@ -91,8 +124,6 @@ public class FormationDao implements Idao<Formation> {
 			req.setInt(1, id);
 
 			ResultSet resultSet = req.executeQuery();
-			// int id_formation, String titre, String code, int duree, int tarif, String
-			// date, String contenu
 
 			if (resultSet.next()) {
 				int id_formation = resultSet.getInt("id_formation");
@@ -103,12 +134,11 @@ public class FormationDao implements Idao<Formation> {
 				String dateDebut = resultSet.getString("dateDebut");
 				String dateFin = resultSet.getString("dateFin");
 				String contenu = resultSet.getString("contenu");
+				String image = resultSet.getString("image");				
 
-				formation = new Formation(id_formation, titre, code, duree, tarif, dateDebut, dateFin, contenu);
+				formation = new Formation(id_formation, titre, code, duree, tarif, dateDebut, dateFin, contenu,image);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("échec");
 		}
 
 		return formation;
@@ -118,6 +148,19 @@ public class FormationDao implements Idao<Formation> {
 	public Formation findByName(String nom) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void delete(int id) {
+		PreparedStatement ps;
+		try {
+			ps=connect.prepareStatement("DELETE FROM formation WHERE id_formation=?");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }

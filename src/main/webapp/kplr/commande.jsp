@@ -6,7 +6,7 @@
 <section id="commande" style="width: 50%; margin: auto;">
 	<div class="container">
 		<br> <br>
-		<div class="row">
+		<div class="row" style="text-align:center; width:80%; margin:auto;">
 
 			<h2>
 				<c:out value="${formation.titre} (code : ${formation.code})"></c:out>
@@ -17,23 +17,23 @@
 			</h4>
 
 		</div>
+	
 		<div class="table-responsive">
 			<table>
-
 				<thead>
-					<th>Compétences visées</th>
-					<th>Dates</th>
-					<th>Tarif</th>
-
+					<tr class="tm-bg-gray">
+						<th>Compétences visées  </th>
+						<th style="width:30%;">Dates  </th>
+						<th>Tarif</th>
+					</tr>
 				</thead>
+				
 				<tbody>
 
-					<td scope="col"><c:out value="${formation.contenu}"></c:out></td>
-					<td scope="col"><c:out value="${formation.dateDebut}">au </c:out>
-						<c:out value="${formation.dateFin}"></c:out></td>
-					<td scope="col" class="text-center"><c:out
-							value="${formation.tarif }"></c:out></td>
-					<th scope="col">&nbsp;</th>
+					<td scope="col">${formation.contenu}</td>
+					<td scope="col">du ${formation.dateDebut} au ${formation.dateFin}</td>
+					<td scope="col">${formation.tarif }&euro;</td>
+					<th scope="col">&nbsp; </th>
 
 				</tbody>
 			</table>
@@ -56,7 +56,7 @@
 
 </section>
 <br>
-<br>
+<br><br><br>
 
 
 <c:import url="footer.jsp"></c:import>

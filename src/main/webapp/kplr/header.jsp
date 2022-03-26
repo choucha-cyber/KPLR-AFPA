@@ -44,27 +44,14 @@ width : 12%;
 
 			<!-- Navigation -->
 			<nav style="font-size: 1.3rem;">
-
 				<ul class="nav">
 					<li class="nav-item"><a href="index" class="navbar-brand"><img
 							style="width: 150px; border-radius: 15px" alt="logo kplr"
 							src="img/logos/logo_kplr.jpg"></a></li>
 					<li class="nav-item"><a class="nav-link" href="index">
 						Qui sommes nous</a></li>
-						
-						
-		
-
-					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="metiers" id="navbarDropdownMenuLink-55"
-									role="button" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-						Nos m&eacute;tiers</a>
-						<li class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-          				aria-labelledby="navbarDropdownMenuLink-55">
-						<li class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="catalogue">Nos Formations</a>
-							
-						</li></li>
+					<li class="nav-item"><a class="nav-link " href="metiers">
+						Nos m&eacute;tiers</a></li>
 					<li class="nav-item"><a class="nav-link" href="clients">
 						Nos Clients</a></li>
 					<li class="nav-item"><a class="nav-link" href="maroc">
@@ -73,18 +60,13 @@ width : 12%;
 						Contact</a></li>
 					<c:if test="${empty client }">
 						<li class="nav-item"><a class="nav-link"
-							href="inscriptionUser">Sign Up</a></li>
-						<li class="nav-item"><a href="inscriptionUser"
-							class="nav-link">Login</a></li>
+							href="inscriptionUser">Sign Up/Login</a></li>
 					</c:if>
 					<c:if test="${not empty client }">
 						<li class="nav-item"><a href="#" class="nav-link">Bonjour
-								${ client.nom}</a></li>
-						<li class="nav-item"><a href="logoutUser" class="nav-link">logout</a></li>
+								${ client.prenom}</a><a href="logoutUser" class="nav-link">logout</a></li>
 					</c:if>
 				</ul>
-
-
 			</nav>
 			
 		</section>

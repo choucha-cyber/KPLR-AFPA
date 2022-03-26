@@ -1,11 +1,9 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -20,7 +18,7 @@ import dao.ClientDao;
 import dao.FormationDao;
 import model.Chat;
 import model.Client;
-import model.Formation;
+
 
 /**
  * Servlet implementation class ajoutFormationAdmin
