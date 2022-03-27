@@ -28,19 +28,17 @@
 
 <style>
 .logos_clients {
-width : 12%;
+	width: 12%;
 }
-
 </style>
 
 </head>
 
 <body>
-
 	<div class="container">
 
 		<!-- Hero section -->
-		<section  class="text-white tm-font-big tm-parallax">
+		<section class="text-white tm-font-big tm-parallax">
 
 			<!-- Navigation -->
 			<nav style="font-size: 1.3rem;">
@@ -48,16 +46,16 @@ width : 12%;
 					<li class="nav-item"><a href="index" class="navbar-brand"><img
 							style="width: 150px; border-radius: 15px" alt="logo kplr"
 							src="img/logos/logo_kplr.jpg"></a></li>
-					<li class="nav-item"><a class="nav-link" href="index">
-						Qui sommes nous</a></li>
+					<li class="nav-item"><a class="nav-link" href="index"> Qui
+							sommes nous</a></li>
 					<li class="nav-item"><a class="nav-link " href="metiers">
-						Nos m&eacute;tiers</a></li>
+							Nos m&eacute;tiers</a></li>
 					<li class="nav-item"><a class="nav-link" href="clients">
-						Nos Clients</a></li>
+							Nos Clients</a></li>
 					<li class="nav-item"><a class="nav-link" href="maroc">
-						Portail Maroc</a></li>
+							Portail Maroc</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact">
-						Contact</a></li>
+							Contact</a></li>
 					<c:if test="${empty client }">
 						<li class="nav-item"><a class="nav-link"
 							href="inscriptionUser">Sign Up/Login</a></li>
@@ -69,6 +67,8 @@ width : 12%;
 				</ul>
 			</nav>
 			
+		
 		</section>
 
 	</div>
+	
