@@ -12,6 +12,7 @@ Le site web KPLR est un site de présentation des activités de la sociétés KP
 - Pile Mamp/Wamp :
 - Database : MySQL/PhpMyAdmin (last V)
 - Serveur : apache-tomcat-9.0.55
+	https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.55/bin/
 - kplr_afpa .sql
 
 ## Features
