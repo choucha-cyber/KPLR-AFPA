@@ -1,13 +1,15 @@
-# projet kplr-afpa
-## _création de site web vitrine_
+# Projet kplr-afpa
+## _Création de site web vitrine_
 
 ##### Réalisé par Shabina Abdoul et Aisha Mimouni pour l'Afpa Paris, formation CDA (Conception, Développement d'applications).
 Formateur Moussa Camara.</br>
 Directeur de stage Nabil El Karmouni.</br>
 
-[![N|Solid](https://www.kplr.ca/wp-content/uploads/2019/06/Logo_KPLR_anglais_couleur_relief-180x106.png)](https://nodesource.com/products/nsolid)
+![Environment Install](./images/11d9f838-d5bb-4726-976b-af83155973ed.JPG)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/choucha-cyber/KPLR-AFPA)
+![Environment Install](./images/fa29496e-b7d3-4e2f-a2ad-2bcc75efd5b4.JPG)
+
+![Environment Install](./images/a425e73e-fbc5-4ded-b901-84e76a7d92d9.JPG)
 
 Le site web KPLR est un site de présentation des activités de la sociétés KPLR, basée à Marseille, Paris et Casablanca, avec deux axes centrales, à savoir le conseil et la formation.
 
