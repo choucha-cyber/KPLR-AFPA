@@ -5,12 +5,6 @@
 Formateur Moussa Camara.</br>
 Directeur de stage Nabil El Karmouni.</br>
 
-![Environment Install](./images/11d9f838-d5bb-4726-976b-af83155973ed.JPG)
-
-![Environment Install](./images/fa29496e-b7d3-4e2f-a2ad-2bcc75efd5b4.JPG)
-
-![Environment Install](./images/a425e73e-fbc5-4ded-b901-84e76a7d92d9.JPG)
-
 Le site web KPLR est un site de présentation des activités de la sociétés KPLR, basée à Marseille, Paris et Casablanca, avec deux axes centrales, à savoir le conseil et la formation.
 
 - Langage Java EE 
@@ -23,7 +17,13 @@ Le site web KPLR est un site de présentation des activités de la sociétés KP
 ## Features
 
 - Dans Eclipse, créer un web dynamic project.
+
+![Environment Install](./images/11d9f838-d5bb-4726-976b-af83155973ed.JPG)
+
 - Le nommer : kplr-afpa (nomination au choix).
+
+![Environment Install](./images/fa29496e-b7d3-4e2f-a2ad-2bcc75efd5b4.JPG)
+
 - Dans le folder 'deployment descriptor, clik-droit et choisir: générer un 'deployment generate desriptor stub'.
 - Un fichier .xml est généré dans le dossier 'WEB-INF' de la WebApp.
 - Le contenu généré par ce fichier .xml sera par défaut :
@@ -65,3 +65,5 @@ Ajouter dan le dossier 'lib' les dépendances suivantes :
 - javax.mail-1.6.2.jar
 - javax.activation-1.2.0.jar
 - Boostrap/JQuery en local pré-installé (pas besoin de Cns, voir GIT).
+
+![Environment Install](./images/a425e73e-fbc5-4ded-b901-84e76a7d92d9.JPG)
